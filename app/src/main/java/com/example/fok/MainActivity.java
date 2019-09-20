@@ -9,6 +9,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,10 +25,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
-    public static final String imgURL = "http://tong.visitkorea.or.kr/cms/resource/75/2396275_image2_1.jpg";
     SimpleDateFormat Year = new SimpleDateFormat("yyyy");
     SimpleDateFormat Month = new SimpleDateFormat("MM");
     SimpleDateFormat Day = new SimpleDateFormat("dd");
@@ -43,9 +44,15 @@ public class MainActivity extends AppCompatActivity {
 
     long mNow;
     Date mDate;
+    int randomNum = 1;
+
+    String seasonthumbnailImage = null, seasonthumbnailTitle = null, seasonthumbnailContentid =null;
+    String seasonthumbnailImage2 = null, seasonthumbnailTitle2 = null, seasonthumbnailContentid2 =null;
+    String seasonthumbnailImage3 = null, seasonthumbnailTitle3 = null, seasonthumbnailContentid3 =null;
+
 
     TextView textView, textView2;
-    ImageButton imageButton;
+    ImageButton button543;
 
     private String getYear(){
         mNow = System.currentTimeMillis();
@@ -100,23 +107,40 @@ public class MainActivity extends AppCompatActivity {
     } //이미지 삽입 메소드
 
     private String Parse_Data(){
-        result =null;
+        result ="";
+        Random random = new Random();
+        randomNum = random.nextInt(100)+1;
         String nowYear = getYear();
         String nowMonth = getMonth();
+        String endMonth = null;
+        seasonthumbnailImage = "";
+        seasonthumbnailTitle = "";
+        seasonthumbnailContentid ="";
+        seasonthumbnailImage2 = "";
+        seasonthumbnailTitle2 = "";
+        seasonthumbnailContentid2 ="";
+        seasonthumbnailImage3 = "";
+        seasonthumbnailTitle3 = "";
+        seasonthumbnailContentid3 ="";
         if(nowMonth == "12" || nowMonth == "01" || nowMonth == "02"){
             nowMonth = "12";
+            endMonth = "02";
+
         }
         else if (nowMonth == "03" || nowMonth == "04" || nowMonth == "05"){
             nowMonth = "03";
+            endMonth = "05";
         }
         else if (nowMonth == "06" || nowMonth == "07" || nowMonth == "08"){
             nowMonth = "06";
+            endMonth = "08";
         }
         else{
             nowMonth = "09";
+            endMonth = "11";
         }
         try {
-            URL url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=2000&pageNo=1&MobileOS=ETC&MobileApp=FoK&arrange=A&listYN=Y&eventStartDate=" + nowYear  + nowMonth+"01"
+            URL url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=3&pageNo="+ randomNum+"&MobileOS=ETC&MobileApp=FoK&arrange=A&listYN=Y&eventStartDate=" + nowYear  + nowMonth+"01&eventEndDate="+nowYear+endMonth+"31"
             );
             XmlPullParserFactory parserCreator = XmlPullParserFactory.newInstance();
             XmlPullParser parser = parserCreator.newPullParser();
@@ -129,15 +153,11 @@ public class MainActivity extends AppCompatActivity {
             while (parserEvent != XmlPullParser.END_DOCUMENT) {
                 switch (parserEvent) {
                     case XmlPullParser.START_TAG://parser가 시작 태그를 만나면 실행
-                        if (parser.getName().equals("totalCount")) { // 갯수
-                            intotalCount = true;
-                        }
+
                         if (parser.getName().equals("addr1")) { // 주소
                             inaddr1 = true;
                         }
-                        if (parser.getName().equals("addr2")) { // 주소
-                            inaddr2 = true;
-                        }
+
                         if (parser.getName().equals("areacode")) { // 주소
                             inareacode = true;
                         }
@@ -183,9 +203,6 @@ public class MainActivity extends AppCompatActivity {
                         if (parser.getName().equals("modifiedtime")) { // 주소
                             inmodifiedtime = true;
                         }
-                        if (parser.getName().equals("readcount")) { // 주소
-                            inreadcount = true;
-                        }
                         if (parser.getName().equals("sigungucode")) { // 주소
                             insigungucode = true;
                         }
@@ -203,20 +220,11 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case XmlPullParser.TEXT://parser가 내용에 접근했을때
-                        if (intotalCount) {
-                            totalCount = parser.getText();
-                            intotalCount = false;
-                        }
+
                         if (inaddr1) {
                             addr1 = parser.getText();
                             inaddr1 = false;
                         }
-
-                        if (inaddr2) {
-                            addr2 = parser.getText();
-                            inaddr2 = false;
-                        }
-
                         if (inareacode) {
                             areacode = parser.getText();
                             inareacode = false;
@@ -288,10 +296,7 @@ public class MainActivity extends AppCompatActivity {
                             modifiedtime = parser.getText();
                             inmodifiedtime = false;
                         }
-                        if (inreadcount) {
-                            readcount = parser.getText();
-                            inreadcount = false;
-                        }
+
                         if (insigungucode) {
                             sigungucode = parser.getText();
                             insigungucode = false;
@@ -308,12 +313,26 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case XmlPullParser.END_TAG:
                         if (parser.getName().equals("item")) {
-                            result = totalCount+"\n" +addr1 +"\n" +addr2+"\n" +areacode+"\n" +cat1+"\n" +cat2+"\n" +cat3+"\n" +contentid+"\n" +contenttypeid+"\n" +createdtime+"\n" +eventstartdate+"\n" +eventenddate+"\n" +firstimage+"\n" +firstimage2+"\n" +mapx+"\n" +mapy+"\n" +mlevel+"\n" +modifiedtime+"\n" +readcount+"\n" +sigungucode+"\n" +tel+"\n" +title;
-                            textView2.setText(result);
+                            result +="\n" +addr1 +"\n" +areacode+"\n" +cat1+"\n" +cat2+"\n" +cat3+"\n" +contentid+"\n" +contenttypeid+"\n" +createdtime+"\n" +eventstartdate+"\n" +eventenddate+"\n" +firstimage+"\n" +firstimage2+"\n" +mapx+"\n" +mapy+"\n" +mlevel+"\n" +modifiedtime+"\n" +sigungucode+"\n" +tel+"\n" +title+"\n";
+                            if(seasonthumbnailContentid == ""){
+                            seasonthumbnailImage = firstimage2;
+                            seasonthumbnailTitle = title;
+                            seasonthumbnailContentid = contentid;
+                                textView.setText(seasonthumbnailContentid + seasonthumbnailImage + seasonthumbnailTitle);
+                                intoImageView(button543,bitmapFromUrl(seasonthumbnailImage));
+                            }
+                            else if(seasonthumbnailContentid2 ==""){
+                                seasonthumbnailImage2 = firstimage2;
+                                seasonthumbnailTitle2 = title;
+                                seasonthumbnailContentid2 = contentid;
+                            }
+                            else {
+                                seasonthumbnailImage3 = firstimage2;
+                                seasonthumbnailTitle3 = title;
+                                seasonthumbnailContentid3 = contentid;
+                            }
                         }
                         break;
-
-
                 }
                 parserEvent = parser.next();
             }
@@ -323,15 +342,16 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return result;
-    }
+    } // 축제 정보 조회 - 계절별, 3개 랜덤
 
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
             Bundle bun = msg.getData();
-            String naverHtml = bun.getString("HTML_DATA");
-            textView2.setText(naverHtml);
+            String parsing = bun.getString("HTML_DATA");
         }
     };
+
+
 
 
 
@@ -344,16 +364,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imageButton = (ImageButton) findViewById(R.id.imageButton);
+
         textView = (TextView) findViewById(R.id.textView);
-        textView2 = (TextView) findViewById(R.id.textView2);
+        button543 = (ImageButton) findViewById(R.id.button543);
+
 
         new Thread() {
             public void run() {
-                String naverHtml = Parse_Data();
+
+                String parsing = Parse_Data();
 
                 Bundle bun = new Bundle();
-                bun.putString("HTML_DATA", naverHtml);
+                bun.putString("HTML_DATA",parsing);
 
                 Message msg = handler.obtainMessage();
                 msg.setData(bun);
@@ -362,8 +384,8 @@ public class MainActivity extends AppCompatActivity {
         }.start();
 
 
-        intoImageView(imageButton,bitmapFromUrl(imgURL));
-        textView.setText(getYear()+getMonth()+getDay());
+
+
 
     }
 }
