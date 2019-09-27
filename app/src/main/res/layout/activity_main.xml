@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button1"
+            android:id="@+id/btnSideBar"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:text="=" />
@@ -85,21 +85,21 @@
                         android:orientation="horizontal">
 
                         <ImageButton
-                            android:id="@+id/button543"
+                            android:id="@+id/button1"
                             android:layout_width="400dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="Buttoddn" />
 
-                        <Button
-                            android:id="@+id/button23434"
+                        <ImageButton
+                            android:id="@+id/button2"
                             android:layout_width="400dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="Button" />
 
-                        <Button
-                            android:id="@+id/button3546546"
+                        <ImageButton
+                            android:id="@+id/button3"
                             android:layout_width="400dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
@@ -188,9 +188,9 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/textView744444444444"
+                    android:id="@+id/texttest"
                     android:layout_width="345dp"
-                    android:layout_height="35dp"
+                    android:layout_height="2500dp"
                     android:text="Hot"
                     android:textSize="20dp" />
             </LinearLayout>
@@ -281,14 +281,14 @@
                             android:text="Button" />
 
                         <Button
-                            android:id="@+id/button2"
+                            android:id="@+id/button_what"
                             android:layout_width="400dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:text="Button" />
 
                         <Button
-                            android:id="@+id/button3"
+                            android:id="@+id/button_where"
                             android:layout_width="400dp"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
