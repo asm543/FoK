@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +15,11 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
@@ -26,6 +32,9 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 public class MainActivity extends AppCompatActivity {
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
@@ -110,9 +119,7 @@ public class MainActivity extends AppCompatActivity {
         result ="";
         Random random = new Random();
         randomNum = random.nextInt(100)+1;
-        String nowYear = getYear();
-        String nowMonth = getMonth();
-        String endMonth = null;
+
         seasonthumbnailImage = "";
         seasonthumbnailTitle = "";
         seasonthumbnailContentid ="";
@@ -122,23 +129,28 @@ public class MainActivity extends AppCompatActivity {
         seasonthumbnailImage3 = "";
         seasonthumbnailTitle3 = "";
         seasonthumbnailContentid3 ="";
-        if(nowMonth == "12" || nowMonth == "01" || nowMonth == "02"){
-            nowMonth = "12";
-            endMonth = "02";
+        new Thread() {
+            public void run() {
+                String nowYear = getYear();
+                String nowMonth = getMonth();
+                String endMonth = null;
+                if(nowMonth == "12" || nowMonth == "01" || nowMonth == "02"){
+                    nowMonth = "12";
+                    endMonth = "02";
 
-        }
-        else if (nowMonth == "03" || nowMonth == "04" || nowMonth == "05"){
-            nowMonth = "03";
-            endMonth = "05";
-        }
-        else if (nowMonth == "06" || nowMonth == "07" || nowMonth == "08"){
-            nowMonth = "06";
-            endMonth = "08";
-        }
-        else{
-            nowMonth = "09";
-            endMonth = "11";
-        }
+                }
+                else if (nowMonth == "03" || nowMonth == "04" || nowMonth == "05"){
+                    nowMonth = "03";
+                    endMonth = "05";
+                }
+                else if (nowMonth == "06" || nowMonth == "07" || nowMonth == "08"){
+                    nowMonth = "06";
+                    endMonth = "08";
+                }
+                else{
+                    nowMonth = "09";
+                    endMonth = "11";
+                }
         try {
             URL url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=3&pageNo="+ randomNum+"&MobileOS=ETC&MobileApp=FoK&arrange=A&listYN=Y&eventStartDate=" + nowYear  + nowMonth+"01&eventEndDate="+nowYear+endMonth+"31"
             );
@@ -325,11 +337,15 @@ public class MainActivity extends AppCompatActivity {
                                 seasonthumbnailImage2 = firstimage2;
                                 seasonthumbnailTitle2 = title;
                                 seasonthumbnailContentid2 = contentid;
+                                textView.setText(seasonthumbnailContentid2 + seasonthumbnailImage2 + seasonthumbnailTitle2);
+                                intoImageView(button543,bitmapFromUrl(seasonthumbnailImage2));
                             }
                             else {
                                 seasonthumbnailImage3 = firstimage2;
                                 seasonthumbnailTitle3 = title;
                                 seasonthumbnailContentid3 = contentid;
+                                textView.setText(seasonthumbnailContentid3 + seasonthumbnailImage3 + seasonthumbnailTitle3);
+                                intoImageView(button543,bitmapFromUrl(seasonthumbnailImage3));
                             }
                         }
                         break;
@@ -338,9 +354,12 @@ public class MainActivity extends AppCompatActivity {
             }
 
         } catch (Exception e) {
-            textView2.setText("ERROR");
+            textView.setText("ERROR");
             e.printStackTrace();
         }
+
+            }
+        }.start();
         return result;
     } // 축제 정보 조회 - 계절별, 3개 랜덤
 
@@ -369,23 +388,135 @@ public class MainActivity extends AppCompatActivity {
         button543 = (ImageButton) findViewById(R.id.button543);
 
 
-        new Thread() {
-            public void run() {
+        String parsing = Parse_Data();
 
-                String parsing = Parse_Data();
+        Bundle bun = new Bundle();
+        bun.putString("HTML_DATA",parsing);
 
-                Bundle bun = new Bundle();
-                bun.putString("HTML_DATA",parsing);
-
-                Message msg = handler.obtainMessage();
-                msg.setData(bun);
-                handler.sendMessage(msg);
-            }
-        }.start();
+        Message msg = handler.obtainMessage();
+        msg.setData(bun);
+        handler.sendMessage(msg);
 
 
 
 
 
     }
+
+
+//    private class GetXMLTask extends AsyncTask<String, Void, Document> {
+//        @Override
+//        protected Document doInBackground(String... urls) {
+//            URL url;
+//            Document doc = null;
+//            String nowYear = getYear();
+//            String nowMonth = getMonth();
+//            String endMonth = null;
+//            if(nowMonth == "12" || nowMonth == "01" || nowMonth == "02"){
+//                nowMonth = "12";
+//                endMonth = "02";
+//
+//            }
+//            else if (nowMonth == "03" || nowMonth == "04" || nowMonth == "05"){
+//                nowMonth = "03";
+//                endMonth = "05";
+//            }
+//            else if (nowMonth == "06" || nowMonth == "07" || nowMonth == "08"){
+//                nowMonth = "06";
+//                endMonth = "08";
+//            }
+//            else{
+//                nowMonth = "09";
+//                endMonth = "11";
+//            }
+//            try {
+//                url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=3&pageNo="+ randomNum+"&MobileOS=ETC&MobileApp=FoK&arrange=A&listYN=Y&eventStartDate=" + nowYear  + nowMonth+"01&eventEndDate="+nowYear+endMonth+"31");
+//                DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+//                DocumentBuilder db = dbf.newDocumentBuilder();
+//                doc = db.parse(new InputSource(url.openStream()));
+//                doc.getDocumentElement().normalize();
+//
+//            } catch (Exception e) {
+//                //에러 토스트메세지
+//            }
+//            return doc;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Document doc) {
+//
+//            String s = "";
+//            NodeList nodeList = doc.getElementsByTagName("item");
+//
+//            for(int i = 0; i< nodeList.getLength(); i++){
+//
+//                Node node = nodeList.item(i);
+//                Element fstElmnt = (Element) node;
+//
+//                NodeList addr1 = fstElmnt.getElementsByTagName("idx");
+//                s += "addr1 = "+  addr1.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList areacode = fstElmnt.getElementsByTagName("gugun");
+//                s += "areacode = "+  areacode.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList cat1  = fstElmnt.getElementsByTagName("instt");
+//                s += "cat1 = "+ cat1.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList cat2 = fstElmnt.getElementsByTagName("spot");
+//                s += "cat2 = "+  cat2.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList cat3 = fstElmnt.getElementsByTagName("spotGubun");
+//                s += "cat3 = "+  cat3.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList contentid = fstElmnt.getElementsByTagName("airPump");
+//                s += "contentid = "+  contentid.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList contenttypeid = fstElmnt.getElementsByTagName("updtDate");
+//                s += "contenttypeid = "+  contenttypeid.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList createdtime = fstElmnt.getElementsByTagName("updtDate");
+//                s += "createdtime = "+  createdtime.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList eventstartdate = fstElmnt.getElementsByTagName("updtDate");
+//                s += "eventstartdate = "+  eventstartdate.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList eventenddate = fstElmnt.getElementsByTagName("updtDate");
+//                s += "eventenddate = "+  eventenddate.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList firstimage = fstElmnt.getElementsByTagName("updtDate");
+//                s += "firstimage = "+  firstimage.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList firstimage2 = fstElmnt.getElementsByTagName("updtDate");
+//                s += "firstimage2 = "+  firstimage2.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList mapx = fstElmnt.getElementsByTagName("updtDate");
+//                s += "mapx = "+  mapx.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList mapy = fstElmnt.getElementsByTagName("updtDate");
+//                s += "mapy = "+  mapy.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList mlevel = fstElmnt.getElementsByTagName("updtDate");
+//                s += "mlevel = "+  mlevel.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList modifiedtime = fstElmnt.getElementsByTagName("updtDate");
+//                s += "modifiedtime = "+  modifiedtime.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList sigungucode = fstElmnt.getElementsByTagName("updtDate");
+//                s += "sigungucode = "+  sigungucode.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList tel = fstElmnt.getElementsByTagName("updtDate");
+//                s += "tel = "+  tel.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//                NodeList title = fstElmnt.getElementsByTagName("updtDate");
+//                s += "title = "+  title.item(0).getChildNodes().item(0).getNodeValue() +"\n";
+//
+//
+//            }
+//
+//
+//
+//            super.onPostExecute(doc);
+//        }
+//    }
 }
+
