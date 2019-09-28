@@ -9,299 +9,617 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="62dp"
-        android:background="@color/colorAccent"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnSideBar"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:text="=" />
-
-
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:background="#00ff0000"
-            android:text="FOK"
-            android:textSize="40dp" />
-
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:text="설정" />
-
-    </LinearLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/mainback1"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="71dp"
+            android:background="@drawable/mainback5"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_main_side"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:layout_weight="0"
+                android:background="@drawable/btnside" />
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_weight="0"
+                android:layout_gravity="center"
+                android:layout_marginLeft="100dp"
+                app:srcCompat="@drawable/mainmark" />
+
+            <Button
+                android:id="@+id/btn_main_set"
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="80dp"
+                android:layout_weight="0"
+                android:background="@drawable/btnset" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="0"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="345dp"
-                    android:layout_height="35dp"
-                    android:text="Hot"
-                    android:textSize="20dp" />
-
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="65dp"
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    android:gravity="center"
-                    android:text="더보기"
-                    android:textSize="15dp" />
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="여행지 또는 축제 검색"
+                    android:textColor="#FFFFFF" />
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/btnsearch" />
             </LinearLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_weight="0"
+                android:orientation="vertical">
 
-                <HorizontalScrollView
+                <ImageView
+                    android:id="@+id/imageView3"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp">
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/maincomant3" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">// 전체 큰 레이아웃
 
-                        <ImageButton
-                            android:id="@+id/button1"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Buttoddn" />
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/mainbar3"
+                            android:text=" 인기"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30dp" />
 
-                        <ImageButton
-                            android:id="@+id/button2"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="340dp"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/mainbar2">
 
-                        <ImageButton
-                            android:id="@+id/button3"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="400dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_hot1"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_hot2"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="0"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_hot3"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="0"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_title1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_title2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_title3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_where1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_where2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_where3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_date1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_date2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_date3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/mainbar3"
+                            android:text=" 계절별"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30dp" />
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="340dp"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/mainbar2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="400dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_wheather1"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_wheather2"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_wheather3"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imageButton18"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_title1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_title2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_title3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_where1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_where2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_where3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_date1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_date2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_date3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="80dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/mainbar3"
+                            android:text=" 추천"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30dp" />
+
+                        <HorizontalScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="340dp"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/mainbar2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="400dp"
+                                    android:layout_weight="1"
+                                    android:orientation="horizontal">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_local1"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_local2"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_local3"
+                                        android:layout_width="380dp"
+                                        android:layout_height="200dp"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_weight="1"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="48dp"
+                                    android:layout_marginTop="40dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_local_title1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_title2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_title3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="제목텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="25dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_local_where1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_where2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_where3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="위치텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="0"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/txt_local_date1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_date2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_date3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="날짜텍스트"
+                                        android:textColor="#FFFFFF"
+                                        android:textSize="20dp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </HorizontalScrollView>
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="TextView"
+                            android:textColor="#2b2b2b"
+                            android:textSize="30dp" />
+
 
                     </LinearLayout>
-                </HorizontalScrollView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button8123123124"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    android:gravity="center"
-                    android:text="더보기"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView745435345"
-                    android:layout_width="345dp"
-                    android:layout_height="35dp"
-                    android:text="Hot"
-                    android:textSize="20dp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/button64564564"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button212323432"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button312121"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                    </LinearLayout>
-                </HorizontalScrollView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button833333"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    android:gravity="center"
-                    android:text="더보기"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/texttest"
-                    android:layout_width="345dp"
-                    android:layout_height="2500dp"
-                    android:text="Hot"
-                    android:textSize="20dp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/button1111"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button233"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button3444"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                    </LinearLayout>
-                </HorizontalScrollView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="65dp"
-                    android:layout_height="wrap_content"
-                    android:background="#00ff0000"
-                    android:gravity="center"
-                    android:text="더보기"
-                    android:textSize="15dp" />
-
-                <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="345dp"
-                    android:layout_height="35dp"
-                    android:text="Hot"
-                    android:textSize="20dp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <HorizontalScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/button"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button_what"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                        <Button
-                            android:id="@+id/button_where"
-                            android:layout_width="400dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:text="Button" />
-
-                    </LinearLayout>
-                </HorizontalScrollView>
-
+                </ScrollView>
             </LinearLayout>
 
         </LinearLayout>
 
-
-    </ScrollView>
-
+    </LinearLayout>
 </LinearLayout>
