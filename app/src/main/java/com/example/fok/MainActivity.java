@@ -2,11 +2,13 @@ package com.example.fok;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -583,7 +585,239 @@ public class MainActivity extends AppCompatActivity {
 
 
         return result;
-    }
+    } //축제 정보 조회 - 조회수별, 3개 랜덤
+    private String Parse_Data_sortLocal() {
+        result = "";
+        Random random = new Random();
+        randomNum = random.nextInt(10) + 1;
+        String areaCode = ""+randomNum;
+        String nowYear = getYear();
+        try {
+            URL url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=3&pageNo=1&MobileOS=ETC&MobileApp=FoK&arrange=Q&listYN=Y&eventStartDate=" + nowYear + "0101&eventEndDate=" + nowYear + "1231&areaCode=" +areaCode
+            );
+            XmlPullParserFactory parserCreator = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = parserCreator.newPullParser();
+
+            parser.setInput(new InputStreamReader(url.openStream(), "UTF-8"));
+
+            int parserEvent = parser.getEventType();
+            System.out.println("파싱시작합니다.");
+
+            while (parserEvent != XmlPullParser.END_DOCUMENT) {
+                switch (parserEvent) {
+                    case XmlPullParser.START_TAG://parser가 시작 태그를 만나면 실행
+
+                        if (parser.getName().equals("addr1")) { // 주소
+                            inaddr1 = true;
+                        }
+
+                        if (parser.getName().equals("areacode")) { // 주소
+                            inareacode = true;
+                        }
+                        if (parser.getName().equals("cat1")) { // 주소
+                            incat1 = true;
+                        }
+                        if (parser.getName().equals("cat2")) { // 주소
+                            incat2 = true;
+                        }
+                        if (parser.getName().equals("cat3")) { // 주소
+                            incat3 = true;
+                        }
+                        if (parser.getName().equals("contentid")) { // 주소
+                            incontentid = true;
+                        }
+                        if (parser.getName().equals("contenttypeid")) { // 주소
+                            incontenttypeid = true;
+                        }
+                        if (parser.getName().equals("createdtime")) { // 주소
+                            increatedtime = true;
+                        }
+                        if (parser.getName().equals("eventstartdate")) { // 주소
+                            ineventstartdate = true;
+                        }
+                        if (parser.getName().equals("eventenddate")) { // 주소
+                            ineventenddate = true;
+                        }
+                        if (parser.getName().equals("firstimage")) { // 주소
+                            infirstimage = true;
+                        }
+                        if (parser.getName().equals("firstimage2")) { // 주소
+                            infirstimage2 = true;
+                        }
+                        if (parser.getName().equals("mapx")) { // 주소
+                            inmapx = true;
+                        }
+                        if (parser.getName().equals("mapy")) { // 주소
+                            inmapy = true;
+                        }
+                        if (parser.getName().equals("mlevel")) { // 주소
+                            inmlevel = true;
+                        }
+                        if (parser.getName().equals("modifiedtime")) { // 주소
+                            inmodifiedtime = true;
+                        }
+                        if (parser.getName().equals("sigungucode")) { // 주소
+                            insigungucode = true;
+                        }
+                        if (parser.getName().equals("tel")) { // 주소
+                            intel = true;
+                        }
+                        if (parser.getName().equals("title")) { // 주소
+                            intitle = true;
+                        }
+
+
+                        if (parser.getName().equals("message")) {
+                            txt_local_title1.setText("정보 불러오기 실패! 다시 시도해주세요.");
+                            txt_local_title2.setText("정보 불러오기 실패! 다시 시도해주세요.");
+                            txt_local_title3.setText("정보 불러오기 실패! 다시 시도해주세요.");
+                            txt_local_date1.setText("");
+                            txt_local_date2.setText("");
+                            txt_local_date3.setText("");
+                            txt_local_where1.setText("");
+                            txt_local_where2.setText("");
+                            txt_local_where2.setText("");
+
+                        }
+                        break;
+                    case XmlPullParser.TEXT://parser가 내용에 접근했을때
+
+                        if (inaddr1) {
+                            addr1 = parser.getText();
+                            inaddr1 = false;
+                        }
+                        if (inareacode) {
+                            areacode = parser.getText();
+                            inareacode = false;
+                        }
+
+                        if (incat1) {
+                            cat1 = parser.getText();
+                            incat1 = false;
+                        }
+
+                        if (incat2) {
+                            cat2 = parser.getText();
+                            incat2 = false;
+                        }
+
+                        if (incat3) {
+                            cat3 = parser.getText();
+                            incat3 = false;
+                        }
+
+                        if (incontentid) {
+                            contentid = parser.getText();
+                            incontentid = false;
+                        }
+
+                        if (incontenttypeid) {
+                            contenttypeid = parser.getText();
+                            incontenttypeid = false;
+                        }
+
+                        if (increatedtime) {
+                            createdtime = parser.getText();
+                            increatedtime = false;
+                        }
+
+                        if (ineventstartdate) {
+                            eventstartdate = parser.getText();
+                            ineventstartdate = false;
+                        }
+
+                        if (ineventenddate) {
+                            eventenddate = parser.getText();
+                            ineventenddate = false;
+                        }
+
+                        if (infirstimage) {
+                            firstimage = parser.getText();
+                            infirstimage = false;
+                        }
+
+                        if (infirstimage2) {
+                            firstimage2 = parser.getText();
+                            infirstimage2 = false;
+                        }
+
+                        if (inmapx) {
+                            mapx = parser.getText();
+                            inmapx = false;
+                        }
+                        if (inmapy) {
+                            mapy = parser.getText();
+                            inmapy = false;
+                        }
+                        if (inmlevel) {
+                            mlevel = parser.getText();
+                            inmlevel = false;
+                        }
+                        if (inmodifiedtime) {
+                            modifiedtime = parser.getText();
+                            inmodifiedtime = false;
+                        }
+
+                        if (insigungucode) {
+                            sigungucode = parser.getText();
+                            insigungucode = false;
+                        }
+                        if (intel) {
+                            tel = parser.getText();
+                            intel = false;
+                        }
+                        if (intitle) {
+                            title = parser.getText();
+                            intitle = false;
+                        }
+
+                        break;
+                    case XmlPullParser.END_TAG:
+                        if (parser.getName().equals("item")) {
+                            result += "\n" + addr1 + "\n" + areacode + "\n" + cat1 + "\n" + cat2 + "\n" + cat3 + "\n" + contentid + "\n" + contenttypeid + "\n" + createdtime + "\n" + eventstartdate + "\n" + eventenddate + "\n" + firstimage + "\n" + firstimage2 + "\n" + mapx + "\n" + mapy + "\n" + mlevel + "\n" + modifiedtime + "\n" + sigungucode + "\n" + tel + "\n" + title + "\n";
+                            if (localthumbnail1[0] == null) {
+                                localthumbnail1[0] = firstimage;
+                                localthumbnail1[1] = title;
+                                localthumbnail1[2] = addr1;
+                                localthumbnail1[3] = eventstartdate;
+                                localthumbnail1[4] = eventenddate;
+                                localthumbnail1[5] = contentid;
+
+//                                        textView.setText(seasonthumbnailContentid + seasonthumbnailImage + seasonthumbnailTitle);
+//                                        intoImageView(seasonthumbnailImage,button1);
+                            } else if (localthumbnail2[0] == null) {
+                                localthumbnail2[0] = firstimage;
+                                localthumbnail2[1] = title;
+                                localthumbnail2[2] = addr1;
+                                localthumbnail2[3] = eventstartdate;
+                                localthumbnail2[4] = eventenddate;
+                                localthumbnail2[5] = contentid;
+//                                        textView.setText(seasonthumbnailContentid2 + seasonthumbnailImage2 + seasonthumbnailTitle2);
+//                                        intoImageView(seasonthumbnailImage2,button2);
+                            } else if (localthumbnail3[0] == null) {
+                                localthumbnail3[0] = firstimage;
+                                localthumbnail3[1] = title;
+                                localthumbnail3[2] = addr1;
+                                localthumbnail3[3] = eventstartdate;
+                                localthumbnail3[4] = eventenddate;
+                                localthumbnail3[5] = contentid;
+//                                        textView.setText(seasonthumbnailContentid3 + seasonthumbnailImage3 + seasonthumbnailTitle3);
+//                                        intoImageView(seasonthumbnailImage3,button3);
+                            }
+                        }
+                        break;
+                }
+                parserEvent = parser.next();
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+
+        return result;
+    }//축제 정보 조회 - 지역별, 지역랜덤, 3개 랜덤
 
     Handler handler = new Handler() {
         public void handleMessage(Message msg) {
@@ -703,7 +937,74 @@ public class MainActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }//메인화면 인기순 3개 축제 띄우기
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        Thread localThread = new Thread() {
+
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                int errCount = 7;
+                Parse_Data_sortLocal();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
+                localBitmap1 = bitmapFromUrl(localthumbnail1[0]);
+                localBitmap2 = bitmapFromUrl(localthumbnail2[0]);
+                localBitmap3 = bitmapFromUrl(localthumbnail3[0]);
+                while (errCount >= 0) {
+                    if (localBitmap1 != null) {
+                        break;
+                    } else {
+                        Parse_Data_sortLocal();
+                        localBitmap1 = bitmapFromUrl(localthumbnail1[0]);
+                        localBitmap2 = bitmapFromUrl(localthumbnail2[0]);
+                        localBitmap3 = bitmapFromUrl(localthumbnail3[0]);
+                        errCount -= 1;
+                        continue;
+                    }
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        localThread.start();
+
+        try {
+            localThread.join();
+
+            if (localBitmap1 != null) {
+                imgbtn_main_local1.setImageBitmap(localBitmap1);
+                txt_local_title1.setText(localthumbnail1[1]);
+                txt_local_where1.setText(localthumbnail1[2]);
+                txt_local_date1.setText(localthumbnail1[3] + " ~ " + localthumbnail1[4]);
+            } else {
+                imgbtn_main_local1.setImageResource(R.drawable.ic_launcher_foreground);
+            }
+
+
+            if (localBitmap2 != null) {
+                imgbtn_main_local2.setImageBitmap(localBitmap2);
+                txt_local_title2.setText(localthumbnail2[1]);
+                txt_local_where2.setText(localthumbnail2[2]);
+                txt_local_date2.setText(localthumbnail2[3] + " ~ " + localthumbnail2[4]);
+            } else {
+                imgbtn_main_local2.setImageResource(R.drawable.ic_launcher_foreground);
+            }
+
+            if (localBitmap3 != null) {
+                imgbtn_main_local3.setImageBitmap(localBitmap3);
+                txt_local_title3.setText(localthumbnail3[1]);
+                txt_local_where3.setText(localthumbnail3[2]);
+                txt_local_date3.setText(localthumbnail3[3] + " ~ " + localthumbnail3[4]);
+            } else {
+                imgbtn_main_local3.setImageResource(R.drawable.ic_launcher_foreground);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }//메인화면 지역별 랜덤 3개 축제 띄우기
         ////////////////////////////////////////////////////////////////////////////////////////////////////
+
         Thread seasonThread = new Thread() {
 
             @Override
@@ -770,71 +1071,14 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }//메인화면 계절별 랜덤 3개 축제 띄우기
 ///////////////////////////////////////////////////////////////
-        Thread localThread = new Thread() {
 
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                int errCount = 7;
-                Parse_Data_season();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
-                localBitmap1 = bitmapFromUrl(localthumbnail1[0]);
-                localBitmap2 = bitmapFromUrl(localthumbnail2[0]);
-                localBitmap3 = bitmapFromUrl(localthumbnail3[0]);
-                while (errCount >= 0) {
-                    if (bitmap1 != null) {
-                        break;
-                    } else {
-                        Parse_Data_season();
-                        localBitmap1 = bitmapFromUrl(localthumbnail1[0]);
-                        localBitmap2 = bitmapFromUrl(localthumbnail2[0]);
-                        localBitmap3 = bitmapFromUrl(localthumbnail3[0]);
-                        errCount -= 1;
-                        continue;
-                    }
-                }
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        localThread.start();
+    imgbtn_main_hot1.setOnClickListener(new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            Intent hot1Intent =
+        }
+    });
 
-        try {
-            localThread.join();
-
-            if (localBitmap1 != null) {
-                imgbtn_main_local1.setImageBitmap(localBitmap1);
-                txt_local_title1.setText(localthumbnail1[1]);
-                txt_local_where1.setText(localthumbnail1[2]);
-                txt_local_date1.setText(localthumbnail1[3] + " ~ " + localthumbnail1[4]);
-            } else {
-                imgbtn_main_local1.setImageResource(R.drawable.ic_launcher_foreground);
-            }
-
-
-            if (localBitmap2 != null) {
-                imgbtn_main_local2.setImageBitmap(localBitmap2);
-                txt_local_title2.setText(localthumbnail2[1]);
-                txt_local_where2.setText(localthumbnail2[2]);
-                txt_local_date2.setText(localthumbnail2[3] + " ~ " + localthumbnail2[4]);
-            } else {
-                imgbtn_main_local2.setImageResource(R.drawable.ic_launcher_foreground);
-            }
-
-            if (localBitmap3 != null) {
-                imgbtn_main_local3.setImageBitmap(localBitmap3);
-                txt_local_title3.setText(localthumbnail3[1]);
-                txt_local_where3.setText(localthumbnail3[2]);
-                txt_local_date3.setText(localthumbnail3[3] + " ~ " + localthumbnail3[4]);
-            } else {
-                imgbtn_main_local3.setImageResource(R.drawable.ic_launcher_foreground);
-            }
-
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }//메인화면 계절별 랜덤 3개 축제 띄우기
 
     }
 }
