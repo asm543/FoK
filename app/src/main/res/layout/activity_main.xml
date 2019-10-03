@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/mainback1"
+        android:background="@drawable/mainback"
         android:orientation="vertical">
 
         <LinearLayout
@@ -36,7 +38,7 @@
                 android:layout_weight="0"
                 android:layout_gravity="center"
                 android:layout_marginLeft="100dp"
-                app:srcCompat="@drawable/mainmark" />
+                app:srcCompat="@drawable/mainback" />
 
             <Button
                 android:id="@+id/btn_main_set"
@@ -91,8 +93,8 @@
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/maincomant2" />
+                    android:layout_weight="0"/>
+                    //app:srcCompat="@drawable/maincoment2"/>
 
                 <ScrollView
                     android:layout_width="match_parent"
@@ -111,16 +113,16 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="80dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/mainbar3"
+                            android:background="@drawable/bar3"
                             android:text=" 인기"
                             android:textColor="#FFFFFF"
-                            android:textSize="30dp" />
+                            android:textSize="30dp" /> // mainbar3
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="340dp"
                             android:layout_margin="20dp"
-                            android:background="@drawable/mainbar2">
+                            android:background="@drawable/bar2">// mainbar2
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -140,8 +142,8 @@
                                         android:layout_width="380dp"
                                         android:layout_height="200dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_hot2"
@@ -149,8 +151,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="0"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_hot3"
@@ -158,8 +160,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="0"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -279,16 +281,16 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="80dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/mainbar3"
+                            android:background="@drawable/bar3"
                             android:text=" 계절별"
                             android:textColor="#FFFFFF"
-                            android:textSize="30dp" />
+                            android:textSize="30dp" />// mainbar3
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="340dp"
                             android:layout_margin="20dp"
-                            android:background="@drawable/mainbar2">
+                            android:background="@drawable/bar2">// mainbar3
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -307,8 +309,8 @@
                                         android:layout_width="380dp"
                                         android:layout_height="200dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar3
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_wheather2"
@@ -316,8 +318,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar3
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_wheather3"
@@ -325,8 +327,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar3
 
                                 </LinearLayout>
 
@@ -447,16 +449,16 @@
                             android:layout_marginLeft="20dp"
                             android:layout_marginTop="80dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/mainbar3"
+                            android:background="@drawable/bar3"
                             android:text=" 추천"
                             android:textColor="#FFFFFF"
-                            android:textSize="30dp" />
+                            android:textSize="30dp" />// mainbar3
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="340dp"
                             android:layout_margin="20dp"
-                            android:background="@drawable/mainbar2">
+                            android:background="@drawable/bar2">// mainbar2
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
@@ -476,8 +478,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_local2"
@@ -485,8 +487,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_local3"
@@ -494,8 +496,8 @@
                                         android:layout_height="200dp"
                                         android:layout_marginLeft="10dp"
                                         android:layout_weight="1"
-                                        android:background="@drawable/mainbar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />
+                                        android:background="@drawable/bar2"
+                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
                                 </LinearLayout>
 
                                 <LinearLayout

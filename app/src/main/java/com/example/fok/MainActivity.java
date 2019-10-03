@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -66,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
     ImageButton imgbtn_main_wheather1,imgbtn_main_wheather2,imgbtn_main_wheather3;
     ImageButton imgbtn_main_hot1,imgbtn_main_hot2,imgbtn_main_hot3;
     ImageButton imgbtn_main_local1,imgbtn_main_local2,imgbtn_main_local3;
+
+    EditText editText;
 
     private String getYear() {
         mNow = System.currentTimeMillis();
@@ -870,6 +873,8 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_main_local2 = (ImageButton) findViewById(R.id.imgbtn_main_local2);
         imgbtn_main_local3 = (ImageButton) findViewById(R.id.imgbtn_main_local3);
 
+        editText = (EditText)findViewById(R.id.editText);
+
 
 
 
@@ -1072,12 +1077,85 @@ public class MainActivity extends AppCompatActivity {
         }//메인화면 계절별 랜덤 3개 축제 띄우기
 ///////////////////////////////////////////////////////////////
 
-    imgbtn_main_hot1.setOnClickListener(new View.OnClickListener(){
-        @Override
-        public void onClick(View view) {
-            Intent hot1Intent =
-        }
-    });
+        imgbtn_main_hot1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",hotthumbnail1[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_hot2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",hotthumbnail2[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_hot3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",hotthumbnail3[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_local1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",localthumbnail1[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_local2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",localthumbnail2[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_local3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",localthumbnail3[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_wheather1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",seasonthumbnail1[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_wheather2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",seasonthumbnail2[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_main_wheather3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailActivity.class);
+                Intent.putExtra("id",seasonthumbnail3[5]);
+                startActivity(Intent);
+            }
+        });
+
+        editText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+            }
+        });
 
 
     }
