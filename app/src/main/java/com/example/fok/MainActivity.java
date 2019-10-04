@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton imgbtn_main_wheather1,imgbtn_main_wheather2,imgbtn_main_wheather3;
     ImageButton imgbtn_main_hot1,imgbtn_main_hot2,imgbtn_main_hot3;
     ImageButton imgbtn_main_local1,imgbtn_main_local2,imgbtn_main_local3;
+    Button btnsearch;
 
     EditText editText;
 
@@ -873,6 +875,8 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_main_local2 = (ImageButton) findViewById(R.id.imgbtn_main_local2);
         imgbtn_main_local3 = (ImageButton) findViewById(R.id.imgbtn_main_local3);
 
+        btnsearch = (Button) findViewById(R.id.btnsearch);
+
         editText = (EditText)findViewById(R.id.editText);
 
 
@@ -1150,10 +1154,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        editText.setOnClickListener(new View.OnClickListener(){
+        btnsearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(MainActivity.this,ListViewActivity.class);
+                startActivity(intent);
             }
         });
 

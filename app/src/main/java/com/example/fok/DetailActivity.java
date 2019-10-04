@@ -18,35 +18,8 @@ public class DetailActivity extends AppCompatActivity {
     TextView textView;
 
 
+//    private String Parse_Data() {
 
-
-
-
-
-
-//    private String Parse_Data_season() {
-//        result = "";
-//        Random random = new Random();
-//        randomNum = random.nextInt(1000) + 1;
-//
-//
-//        String nowYear = getYear();
-//        String nowMonth = getMonth();
-//        String endMonth = null;
-//        if (nowMonth == "12" || nowMonth == "01" || nowMonth == "02") {
-//            nowMonth = "12";
-//            endMonth = "02";
-//
-//        } else if (nowMonth == "03" || nowMonth == "04" || nowMonth == "05") {
-//            nowMonth = "03";
-//            endMonth = "05";
-//        } else if (nowMonth == "06" || nowMonth == "07" || nowMonth == "08") {
-//            nowMonth = "06";
-//            endMonth = "08";
-//        } else {
-//            nowMonth = "09";
-//            endMonth = "11";
-//        }
 //        try {
 //            URL url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=3&pageNo=" + randomNum + "&MobileOS=ETC&MobileApp=FoK&arrange=P&listYN=Y&eventStartDate=" + nowYear + nowMonth + "01&eventEndDate=" + nowYear + endMonth + "31"
 //            );

@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/mainback"
+        android:background="@drawable/mainback1"
         android:orientation="vertical">
 
         <LinearLayout
@@ -38,7 +38,7 @@
                 android:layout_weight="0"
                 android:layout_gravity="center"
                 android:layout_marginLeft="100dp"
-                app:srcCompat="@drawable/mainback" />
+                app:srcCompat="@drawable/mainmark" />
 
             <Button
                 android:id="@+id/btn_main_set"
@@ -74,13 +74,13 @@
                     android:text="여행지 또는 축제 검색"
                     android:textColor="#FFFFFF" />
 
-                <ImageView
-                    android:id="@+id/imageView"
+                <Button
+                    android:id="@+id/btnsearch"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:layout_margin="10dp"
                     android:layout_weight="0"
-                    app:srcCompat="@drawable/btnsearch" />
+                    android:background="@drawable/btnsearch" />
             </LinearLayout>
 
             <LinearLayout
@@ -93,8 +93,8 @@
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0"/>
-                    //app:srcCompat="@drawable/maincoment2"/>
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/maincomant2" />
 
                 <ScrollView
                     android:layout_width="match_parent"
@@ -111,166 +111,158 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:layout_marginTop="80dp"
+                            android:layout_marginTop="20dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/bar3"
+                            android:background="@drawable/mainbar3"
                             android:text=" 인기"
                             android:textColor="#FFFFFF"
-                            android:textSize="30dp" /> // mainbar3
+                            android:textSize="30dp" />
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="340dp"
                             android:layout_margin="20dp"
-                            android:background="@drawable/bar2">// mainbar2
+                            android:background="@drawable/mainbar2">
 
                             <LinearLayout
-                                android:layout_width="match_parent"
+                                android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_margin="10dp"
-                                android:orientation="vertical">
-
+                                android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="400dp"
-                                    android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_hot1"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
-
-                                    <ImageButton
-                                        android:id="@+id/imgbtn_main_hot2"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="0"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
-
-                                    <ImageButton
-                                        android:id="@+id/imgbtn_main_hot3"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="0"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_marginTop="40dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
 
                                     <TextView
                                         android:id="@+id/txt_hot_title1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_hot_title2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_hot_title3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="45dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_hot_where1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_hot_where2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_hot_where3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_hot_date1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginLeft="10dp"
                                         android:layout_marginTop="10dp"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_hot2"
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_title2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_where2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_hot_date2"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_hot3"
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_title3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+
+                                    <TextView
+                                        android:id="@+id/txt_hot_where3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_hot_date3"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
                                 </LinearLayout>
-
                             </LinearLayout>
                         </HorizontalScrollView>
 
@@ -279,166 +271,158 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:layout_marginTop="80dp"
+                            android:layout_marginTop="20dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/bar3"
+                            android:background="@drawable/mainbar3"
                             android:text=" 계절별"
                             android:textColor="#FFFFFF"
-                            android:textSize="30dp" />// mainbar3
+                            android:textSize="30dp" />
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="340dp"
                             android:layout_margin="20dp"
-                            android:background="@drawable/bar2">// mainbar3
+                            android:background="@drawable/mainbar2">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_margin="10dp"
-                                android:orientation="vertical">
+                                android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="400dp"
-                                    android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_wheather1"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar3
-
-                                    <ImageButton
-                                        android:id="@+id/imgbtn_main_wheather2"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar3
-
-                                    <ImageButton
-                                        android:id="@+id/imgbtn_main_wheather3"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar3
-
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_marginTop="40dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
 
                                     <TextView
                                         android:id="@+id/txt_wheather_title1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_wheather_title2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_wheather_title3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="45dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_wheather_where1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_wheather_where2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_wheather_where3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_wheather_date1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginLeft="10dp"
                                         android:layout_marginTop="10dp"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_wheather2"
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_title2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_where2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_wheather_date2"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_wheather3"
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_title3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+
+                                    <TextView
+                                        android:id="@+id/txt_wheather_where3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_wheather_date3"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
                                 </LinearLayout>
-
                             </LinearLayout>
                         </HorizontalScrollView>
 
@@ -447,179 +431,160 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
-                            android:layout_marginTop="80dp"
+                            android:layout_marginTop="20dp"
                             android:layout_marginRight="20dp"
-                            android:background="@drawable/bar3"
+                            android:background="@drawable/mainbar3"
                             android:text=" 추천"
                             android:textColor="#FFFFFF"
-                            android:textSize="30dp" />// mainbar3
+                            android:textSize="30dp" />
 
                         <HorizontalScrollView
                             android:layout_width="match_parent"
                             android:layout_height="340dp"
                             android:layout_margin="20dp"
-                            android:background="@drawable/bar2">// mainbar2
+                            android:background="@drawable/mainbar2">
 
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="match_parent"
-                                android:layout_margin="10dp"
-                                android:orientation="vertical">
+                                android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="400dp"
-                                    android:layout_weight="1"
-                                    android:orientation="horizontal">
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
 
                                     <ImageButton
                                         android:id="@+id/imgbtn_main_local1"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
-
-                                    <ImageButton
-                                        android:id="@+id/imgbtn_main_local2"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
-
-                                    <ImageButton
-                                        android:id="@+id/imgbtn_main_local3"
-                                        android:layout_width="380dp"
-                                        android:layout_height="200dp"
-                                        android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/bar2"
-                                        app:srcCompat="@mipmap/ic_launcher" />// mainbar2
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="48dp"
-                                    android:layout_marginTop="40dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
 
                                     <TextView
                                         android:id="@+id/txt_local_title1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_local_title2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_local_title3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="제목텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="25dp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="45dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_local_where1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_local_where2"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-
-                                    <TextView
-                                        android:id="@+id/txt_local_where3"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="위치텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
-                                </LinearLayout>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="40dp"
-                                    android:layout_weight="0"
-                                    android:orientation="horizontal">
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_local_date1"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="5dp"
+                                        android:layout_marginLeft="10dp"
                                         android:layout_marginTop="10dp"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_local2"
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_title2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_where2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_local_date2"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="330dp"
+                                    android:layout_margin="10dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@drawable/bar10"
+                                    android:orientation="vertical">
+
+                                    <ImageButton
+                                        android:id="@+id/imgbtn_main_local3"
+                                        android:layout_margin="10dp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="150dp"
+                                        android:scaleType="fitXY"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_title3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:textSize="20dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
+
+                                    <TextView
+                                        android:id="@+id/txt_local_where3"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
 
                                     <TextView
                                         android:id="@+id/txt_local_date3"
-                                        android:layout_width="wrap_content"
+                                        android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_weight="1"
-                                        android:text="날짜텍스트"
-                                        android:textColor="#FFFFFF"
-                                        android:textSize="20dp" />
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textSize="10dp"
+                                        android:textColor="#ffffff"
+                                        android:text="TextView" />
                                 </LinearLayout>
-
                             </LinearLayout>
                         </HorizontalScrollView>
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:text="TextView"
-                            android:textColor="#2b2b2b"
-                            android:textSize="30dp" />
-
-
                     </LinearLayout>
                 </ScrollView>
             </LinearLayout>
