@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.fok">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ListViewActivity"></activity>
+        <activity android:name=".MapSeoulGyeonggidoActivity"></activity>
+        <activity android:name=".MapMainActivity" />
+        <activity android:name=".MapJeonlanamdoActivity" />
+        <activity android:name=".MapJeonlabugdoActivity" />
+        <activity android:name=".MapJejudoActivity" />
+        <activity android:name=".MapGyeongsangnamdoActivity" />
+        <activity android:name=".MapGyeongsangbugdoActivity" />
+        <activity android:name=".MapGangwondoActivity" />
+        <activity android:name=".MapChungcheongnamdoActivity" />
+        <activity android:name=".MapChungcheongbugdoActivity" />
+        <activity android:name=".ListViewActivity" />
         <activity android:name=".DetailActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -22,5 +30,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

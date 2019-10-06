@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/map_back"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:background="@drawable/bar7"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_side"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_weight="0"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/btnside" />
+
+            <Button
+                android:id="@+id/btn_map_home"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_weight="0"
+                android:layout_marginLeft="110dp"
+                android:layout_gravity="center"
+                android:background="@drawable/mark3"
+                />
+
+            <Button
+                android:id="@+id/btn_set"
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="90dp"
+                android:layout_weight="0"
+                android:background="@drawable/btnset" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_weight="0"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:layout_marginLeft="10dp"
+                    android:inputType="textPersonName"
+                    android:text="여행지 또는 축제 검색"
+                    android:textColor="#FFFFFF" />
+
+                <ImageView
+                    android:id="@+id/btnsearch"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/btnsearch" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/koreamap"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginTop="80dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/map_main_gg"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="100dp"
+                        android:layout_weight="0"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/check" />
+
+                    <Button
+                        android:id="@+id/map_main_gw"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="60dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/check" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="60dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/map_main_cn"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:layout_marginLeft="100dp"
+                        android:background="@drawable/check" />
+
+                    <Button
+                        android:id="@+id/map_main_cb"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:layout_marginLeft="0dp"
+                        android:background="@drawable/check" />
+
+                    <Button
+                        android:id="@+id/map_main_gb"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/check" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/map_main_jb"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="120dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/check" />
+
+                    <Button
+                        android:id="@+id/map_main_gn"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="45dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/check" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/map_main_jn"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginLeft="90dp"
+                        android:layout_weight="0"
+                        android:background="@drawable/check" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/map_main_jj"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0"
+                        android:layout_marginLeft="60dp"
+                        android:background="@drawable/check" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
