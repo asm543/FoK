@@ -22,7 +22,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_main_side"
+                android:id="@+id/btn_main_map"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"

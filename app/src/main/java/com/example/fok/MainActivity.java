@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton imgbtn_main_hot1,imgbtn_main_hot2,imgbtn_main_hot3;
     ImageButton imgbtn_main_local1,imgbtn_main_local2,imgbtn_main_local3;
     Button btnsearch;
+    Button btn_main_map;
 
     EditText editText;
 
@@ -876,6 +877,7 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_main_local3 = (ImageButton) findViewById(R.id.imgbtn_main_local3);
 
         btnsearch = (Button) findViewById(R.id.btnsearch);
+        btn_main_map = (Button) findViewById(R.id.btn_main_map);
 
         editText = (EditText)findViewById(R.id.editText);
 
@@ -1159,6 +1161,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
                 Intent intent = new Intent(MainActivity.this,ListViewActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_main_map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,MapMainActivity.class);
                 startActivity(intent);
             }
         });

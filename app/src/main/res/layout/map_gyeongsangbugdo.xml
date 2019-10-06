@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     android:orientation="vertical" >
 
 
@@ -134,7 +132,7 @@
                                         android:orientation="horizontal">
 
                                         <Button
-                                            android:id="@+id/btn_gsb1"
+                                            android:id="@+id/btn_gb1"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_marginLeft="220dp"
@@ -150,7 +148,7 @@
                                         android:orientation="horizontal">
 
                                         <Button
-                                            android:id="@+id/btn_gsb2"
+                                            android:id="@+id/btn_gb2"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -159,7 +157,7 @@
                                             android:background="@drawable/btnomija" />
 
                                         <Button
-                                            android:id="@+id/btn_gsb3"
+                                            android:id="@+id/btn_gb3"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -174,7 +172,7 @@
                                         android:orientation="horizontal">
 
                                         <Button
-                                            android:id="@+id/btn_gsb4"
+                                            android:id="@+id/btn_gb4"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -183,7 +181,7 @@
                                             android:background="@drawable/btnlgfestival" />
 
                                         <Button
-                                            android:id="@+id/btn_gsb5"
+                                            android:id="@+id/btn_gb5"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -192,7 +190,7 @@
                                             android:background="@drawable/btnkoreantraditionalmusic" />
 
                                         <Button
-                                            android:id="@+id/btn_gsb6"
+                                            android:id="@+id/btn_gb6"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"

@@ -4,8 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:focusable="true"
-    android:focusableInTouchMode="true"
     android:orientation="vertical" >
 
 
@@ -135,7 +133,7 @@
                                         android:orientation="horizontal">
 
                                         <Button
-                                            android:id="@+id/btn_gsn1"
+                                            android:id="@+id/btn_gn1"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_marginLeft="40dp"
@@ -144,7 +142,7 @@
                                             android:background="@drawable/btngeochang" />
 
                                         <Button
-                                            android:id="@+id/btn_gsn2"
+                                            android:id="@+id/btn_gn2"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_marginLeft="60dp"
@@ -153,7 +151,7 @@
                                             android:background="@drawable/btnmount" />
 
                                         <Button
-                                            android:id="@+id/btn_gsn3"
+                                            android:id="@+id/btn_gn3"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_marginLeft="115dp"
@@ -168,7 +166,7 @@
                                         android:orientation="horizontal">
 
                                         <Button
-                                            android:id="@+id/btn_gsn4"
+                                            android:id="@+id/btn_gn4"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -176,7 +174,7 @@
                                             android:background="@drawable/btncow" />
 
                                         <Button
-                                            android:id="@+id/btn_gsn5"
+                                            android:id="@+id/btn_gn5"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -185,7 +183,7 @@
                                             android:background="@drawable/btnkim" />
 
                                         <Button
-                                            android:id="@+id/btn_gsn6"
+                                            android:id="@+id/btn_gn6"
                                             android:layout_width="45dp"
                                             android:layout_height="43dp"
                                             android:layout_marginLeft="95dp"
@@ -200,7 +198,7 @@
                                         android:orientation="horizontal">
 
                                         <Button
-                                            android:id="@+id/btn_gsn7"
+                                            android:id="@+id/btn_gn7"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -209,7 +207,7 @@
                                             android:background="@drawable/btncos" />
 
                                         <Button
-                                            android:id="@+id/btn_gsn8"
+                                            android:id="@+id/btn_gn8"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
@@ -218,7 +216,7 @@
                                             android:background="@drawable/btngosung" />
 
                                         <Button
-                                            android:id="@+id/btn_gsn9"
+                                            android:id="@+id/btn_gn9"
                                             android:layout_width="40dp"
                                             android:layout_height="40dp"
                                             android:layout_weight="0"
