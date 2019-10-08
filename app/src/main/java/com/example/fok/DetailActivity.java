@@ -523,6 +523,14 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        if (savedInstanceState == null) {
+
+            MainFragment mainFragment = new MainFragment();
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.mainFragment, mainFragment, "main")
+                    .commit();
+        }
+
         txt_detail = (TextView)findViewById(R.id.txt_detail);
         imgbtn_detail = (ImageView) findViewById(R.id.imgbtn_detail);
         editText = (EditText)findViewById(R.id.editText);
@@ -569,6 +577,13 @@ public class DetailActivity extends AppCompatActivity {
                 editText.setText("");
             }
         });
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                editText.setText("");
+            }
+        });
+
 
 
     }

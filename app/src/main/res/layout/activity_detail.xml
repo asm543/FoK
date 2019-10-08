@@ -122,12 +122,13 @@
                     android:layout_marginLeft="10dp"
                     android:text="지도" />
 
-                <LinearLayout
+                <FrameLayout
+                    android:id="@+id/mainFragment"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:background="@drawable/detaback2"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="vertical"></FrameLayout>
 
                 <TextView
                     android:id="@+id/textView10"
