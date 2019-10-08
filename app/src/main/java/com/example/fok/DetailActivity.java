@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,11 +27,12 @@ public class DetailActivity extends AppCompatActivity {
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
     TextView txt_detail;
     ImageView imgbtn_detail;
+    EditText editText;
 
     String ContentID="";
 
-    String createdtime = null, homepage = null, modifiedtime = null, tel = null, telname = null, title = null, firstimage = null;
-    String addr1 = null, addr2 = null, zipcode = null, mapx = null, mapy = null, overview = null; //공통정보 조회 쪽
+    String createdtime = null, homepage = null, modifiedtime = null, tel = null, telname = null, title = null, firstimage = null; // 등록날짜,홈페이지주소, 수정날짜, 전화번호, 전화번호이름, 제목, 사진
+    String addr1 = null, addr2 = null, zipcode = null, mapx = null, mapy = null, overview = null; //주소1, 주소2, 우편번호, x좌표, y좌표, 미리보기텍스트 // 공통정보 조회 쪽
 
     String agelimit = null, bookingplace = null, discountinfofestival = null, eventenddate = null, eventhomepage = null, eventplace = null, eventstartdate = null;
     String festivalgrade = null, placeinfo = null, playtime = null, program = null, spendtimefestival = null, sponsor1 = null;
@@ -522,6 +525,7 @@ public class DetailActivity extends AppCompatActivity {
 
         txt_detail = (TextView)findViewById(R.id.txt_detail);
         imgbtn_detail = (ImageView) findViewById(R.id.imgbtn_detail);
+        editText = (EditText)findViewById(R.id.editText);
 
         Intent intent = new Intent(this.getIntent());
         ContentID = intent.getStringExtra("id");
@@ -558,6 +562,13 @@ public class DetailActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         } // 콘텐츠 코드로 데이터 불러오기
+
+        editText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                editText.setText("");
+            }
+        });
 
 
     }

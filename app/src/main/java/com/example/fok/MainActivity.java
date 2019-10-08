@@ -876,7 +876,7 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_main_local2 = (ImageButton) findViewById(R.id.imgbtn_main_local2);
         imgbtn_main_local3 = (ImageButton) findViewById(R.id.imgbtn_main_local3);
 
-        btnsearch = (Button) findViewById(R.id.btnsearch);
+        btnsearch = (Button)findViewById(R.id.btnsearch);
         btn_main_map = (Button) findViewById(R.id.btn_main_map);
 
         editText = (EditText)findViewById(R.id.editText);
@@ -1161,6 +1161,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
                 Intent intent = new Intent(MainActivity.this,ListViewActivity.class);
+                intent.putExtra("searchKeyword", editText.getText().toString());
                 startActivity(intent);
             }
         });
@@ -1169,6 +1170,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,MapMainActivity.class);
                 startActivity(intent);
+            }
+        });
+        editText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                editText.setText("");
+            }
+        });
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                editText.setText("");
             }
         });
 
