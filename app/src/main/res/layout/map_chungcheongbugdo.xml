@@ -21,16 +21,16 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn_map_side"
+                android:id="@+id/btn_map"
                 android:layout_width="50dp"
                 android:layout_height="40dp"
                 android:layout_weight="0"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/btnside" />
+                android:background="@drawable/btnmap" />
 
             <Button
-                android:id="@+id/btn_map_home"
+                android:id="@+id/btn_home"
                 android:layout_width="80dp"
                 android:layout_height="50dp"
                 android:layout_weight="0"
@@ -40,13 +40,13 @@
                 />
 
             <Button
-                android:id="@+id/btn_set"
+                android:id="@+id/btn_back"
                 android:layout_width="51dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="90dp"
                 android:layout_weight="0"
-                android:background="@drawable/btnset" />
+                android:background="@drawable/btnback" />
         </LinearLayout>
 
         <ScrollView
@@ -82,13 +82,13 @@
                             android:text="여행지 또는 축제 검색"
                             android:textColor="#2B2B2B" />
 
-                        <ImageView
+                        <Button
                             android:id="@+id/btnsearch"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
                             android:layout_weight="0"
-                            app:srcCompat="@drawable/btnsearch" />
+                            android:background="@drawable/btnsearch" />
                     </LinearLayout>
 
                     <TextView

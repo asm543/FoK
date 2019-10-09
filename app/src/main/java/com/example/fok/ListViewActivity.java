@@ -16,6 +16,7 @@ import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -50,6 +51,8 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
     EditText editText;
 
 
+    Button btn_home,btn_back,btnsearch;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,45 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
 
         addItems();
 
+        // 상단바
+        btn_home = (Button)findViewById(R.id.btn_home);
+        btn_back = (Button)findViewById(R.id.btn_back);
+        btnsearch = (Button)findViewById(R.id.btnsearch);
+
+        btn_home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(ListViewActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(ListViewActivity.this,MapMainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        btnsearch.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(ListViewActivity.this,ListViewActivity.class);
+                intent.putExtra("searchKeyword",editText.getText().toString());
+                startActivity(intent);
+            }
+        });
+        editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                editText.setText("");
+            }
+        });
+
+        //상단바 끝
 
             // 기본 생성 코드 및 ListView와 Adapter 생성 코드
             // ...
