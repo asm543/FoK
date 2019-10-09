@@ -26,7 +26,7 @@ import java.util.Random;
 public class DetailActivity extends AppCompatActivity {
 
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
-    TextView txt_detail;
+    TextView txt_title,txt_what,txt_start;
     ImageView imgbtn_detail;
     EditText editText;
     Button btn_map,btn_home,btn_back,btnsearch;
@@ -525,7 +525,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        txt_detail = (TextView)findViewById(R.id.txt_detail);
+        txt_title = (TextView)findViewById(R.id.txt_title);
+        txt_what = (TextView)findViewById(R.id.txt_what);
+        txt_start = (TextView)findViewById(R.id.txt_start);
+
         imgbtn_detail = (ImageView) findViewById(R.id.imgbtn_detail);
         editText = (EditText)findViewById(R.id.editText);
 
@@ -616,7 +619,8 @@ public class DetailActivity extends AppCompatActivity {
 
             if (DetailBitmap != null) {
                 imgbtn_detail.setImageBitmap(DetailBitmap);
-                txt_detail.setText( "\n" + eventstartdate + " ~ " + eventenddate +"\n");
+                txt_title.setText(title);
+                txt_what.setText(infotext);
             } else {
                 imgbtn_detail.setImageResource(R.drawable.ic_launcher_foreground);
             }

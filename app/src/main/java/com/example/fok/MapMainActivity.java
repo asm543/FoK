@@ -27,6 +27,7 @@ public class MapMainActivity extends AppCompatActivity {
         btn_home = (Button)findViewById(R.id.btn_home);
         btnsearch = (Button)findViewById(R.id.btnsearch);
         editText = (EditText)findViewById(R.id.editText);
+        btn_back = (Button)findViewById(R.id.btn_back);
 
 
         btn_home.setOnClickListener(new View.OnClickListener(){

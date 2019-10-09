@@ -80,13 +80,13 @@
                             android:text="여행지 또는 축제 검색"
                             android:textColor="#2B2B2B" />
 
-                        <ImageView
+                        <Button
                             android:id="@+id/btnsearch"
                             android:layout_width="40dp"
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
                             android:layout_weight="0"
-                            app:srcCompat="@drawable/btnsearch" />
+                            android:background="@drawable/btnsearch" />
                     </LinearLayout>
 
 

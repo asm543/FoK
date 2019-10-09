@@ -20,7 +20,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btn_map"
+            android:id="@+id/btn_home"
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:layout_weight="0"
@@ -58,13 +58,13 @@
             android:text="여행지 또는 축제 검색"
             android:textColor="#2b2b2b" />
 
-        <ImageView
+        <Button
             android:id="@+id/btnsearch"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_weight="0"
-            app:srcCompat="@drawable/btnsearch2" />
+            android:background="@drawable/btnsearch2" />
     </LinearLayout>
 
     <ListView

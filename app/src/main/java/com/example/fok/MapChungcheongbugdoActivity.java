@@ -71,6 +71,7 @@ public class MapChungcheongbugdoActivity extends AppCompatActivity {
                 // 커스텀 리스트 뷰 창으로 이동
                 Intent intent = new Intent(MapChungcheongbugdoActivity.this,MapMainActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){
