@@ -1,6 +1,7 @@
 package com.example.fok;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -34,13 +35,15 @@ public class DetailActivity extends FontActivity {
     String ContentID="";
 
     String createdtime = null, homepage = null, modifiedtime = null, tel = null, telname = null, title = null, firstimage = null; // 등록날짜,홈페이지주소, 수정날짜, 전화번호, 전화번호이름, 제목, 사진
-    String addr1 = null, addr2 = null, zipcode = null, mapx = null, mapy = null, overview = null; //주소1, 주소2, 우편번호, x좌표, y좌표, 미리보기텍스트 // 공통정보 조회 쪽
+    String addr1 = null, addr2 = null, zipcode = null;
+    public String mapx = null, mapy = null, overview = null; //주소1, 주소2, 우편번호, x좌표, y좌표, 미리보기텍스트 // 공통정보 조회 쪽
 
     String agelimit = null, bookingplace = null, discountinfofestival = null, eventenddate = null, eventhomepage = null, eventplace = null, eventstartdate = null;
     String festivalgrade = null, placeinfo = null, playtime = null, program = null, spendtimefestival = null, sponsor1 = null;
     String sponsor1tel = null, sponsor2 = null, sponsor2tel = null, subevent = null, usetimefestival = null; // 소개정보 조회 쪽
 
-    String infoname=null,infotext=null; // 반복정보 조회 쪽
+    String infoname=null,infotext=null;
+    String[] info = new String[3];// 반복정보 조회 쪽
 
     String originimgurl=null; //이미지정보 조회 부분
 
@@ -435,7 +438,18 @@ public class DetailActivity extends FontActivity {
                         break;
                     case XmlPullParser.END_TAG:
                         if (parser.getName().equals("item")) {
-
+                            if(info[0] == null) {
+                                info[0] = infoname + " : " + infotext;
+                            }
+                            else info[0] = "";
+                            if(info[1] == null){
+                                info[1] = infoname + " : " + infotext;
+                            }
+                            else info[1] ="";
+                            if(info[2] == null){
+                                info[2] = infoname + " : " + infotext;
+                            }
+                            else info[2] = "";
                         }
                         break;
                 }
@@ -528,9 +542,55 @@ public class DetailActivity extends FontActivity {
         txt_title = (TextView)findViewById(R.id.txt_title);
         txt_what = (TextView)findViewById(R.id.txt_what);
         txt_start = (TextView)findViewById(R.id.txt_start);
-
         imgbtn_detail = (ImageView) findViewById(R.id.imgbtn_detail);
         editText = (EditText)findViewById(R.id.editText);
+        btn_map = (Button)findViewById(R.id.btn_map);
+        btn_home = (Button)findViewById(R.id.btn_home);
+        btn_back = (Button)findViewById(R.id.btn_back);
+        btnsearch = (Button)findViewById(R.id.btnsearch);
+
+
+        Intent intent = new Intent(this.getIntent());
+        ContentID = intent.getStringExtra("id");
+
+        Thread DetailThread = new Thread() {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                Parse_Data_Common();
+                Parse_Data_Intro();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
+                Parse_Data_Info();
+                Parse_Data_Image();
+
+                DetailBitmap = bitmapFromUrl(firstimage);
+
+                try {
+                    Thread.sleep(300);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        };
+        DetailThread.start();
+
+        try {
+            DetailThread.join();
+
+            if (DetailBitmap != null) {
+                imgbtn_detail.setImageBitmap(DetailBitmap);
+                txt_title.setText(title);
+                txt_what.setText("\b"+info[0] + "\n" + "\b"+info[1]);
+            } else {
+                imgbtn_detail.setImageResource(R.drawable.ic_launcher_foreground);
+                txt_title.setText(title);
+                txt_what.setText("\b"+info[0] + "\n" + "\b"+info[1]);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } // 콘텐츠 코드로 데이터 불러오기
+
+
+
 
         if (savedInstanceState == null) {
 
@@ -538,15 +598,11 @@ public class DetailActivity extends FontActivity {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.mainFragment, mainFragment, "main")
                     .commit();
+            Bundle bundle = new Bundle(2); // 파라미터는 전달할 데이터 개수
+            bundle.putString("id", ContentID); // key , value
+            bundle.putString("id2", title); // key , value
+            mainFragment.setArguments(bundle);
         }
-
-        // 상단바 , 검색 창  버튼 이벤트 시작
-        btn_map = (Button)findViewById(R.id.btn_map);
-        btn_home = (Button)findViewById(R.id.btn_home);
-        btn_back = (Button)findViewById(R.id.btn_back);
-        btnsearch = (Button)findViewById(R.id.btnsearch);
-
-
 
 
         btn_map.setOnClickListener(new View.OnClickListener(){
@@ -591,42 +647,8 @@ public class DetailActivity extends FontActivity {
 
 
 
-        Intent intent = new Intent(this.getIntent());
-        ContentID = intent.getStringExtra("id");
 
-        Thread DetailThread = new Thread() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                Parse_Data_Common();
-                Parse_Data_Intro();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
-                Parse_Data_Info();
-                Parse_Data_Image();
 
-                DetailBitmap = bitmapFromUrl(firstimage);
-
-                try {
-                    Thread.sleep(300);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        };
-        DetailThread.start();
-
-        try {
-            DetailThread.join();
-
-            if (DetailBitmap != null) {
-                imgbtn_detail.setImageBitmap(DetailBitmap);
-                txt_title.setText(title);
-                txt_what.setText(infotext);
-            } else {
-                imgbtn_detail.setImageResource(R.drawable.ic_launcher_foreground);
-            }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } // 콘텐츠 코드로 데이터 불러오기
 
         editText.setOnClickListener(new View.OnClickListener(){
             @Override
