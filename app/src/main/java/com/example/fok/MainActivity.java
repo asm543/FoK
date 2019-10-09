@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton imgbtn_main_hot1,imgbtn_main_hot2,imgbtn_main_hot3;
     ImageButton imgbtn_main_local1,imgbtn_main_local2,imgbtn_main_local3;
     Button btnsearch;
-    Button btn_main_map;
+    Button btn_map;
 
     EditText editText;
 
@@ -877,7 +877,7 @@ public class MainActivity extends AppCompatActivity {
         imgbtn_main_local3 = (ImageButton) findViewById(R.id.imgbtn_main_local3);
 
         btnsearch = (Button)findViewById(R.id.btnsearch);
-        btn_main_map = (Button) findViewById(R.id.btn_main_map);
+        btn_map = (Button) findViewById(R.id.btn_map);
 
         editText = (EditText)findViewById(R.id.editText);
 
@@ -1165,19 +1165,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        btn_main_map.setOnClickListener(new View.OnClickListener(){
+        btn_map.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,MapMainActivity.class);
                 startActivity(intent);
             }
         });
-        editText.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                editText.setText("");
-            }
-        });
+
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View view, boolean b) {

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,6 +29,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView txt_detail;
     ImageView imgbtn_detail;
     EditText editText;
+    Button btn_map,btn_home,btn_back,btnsearch;
 
     String ContentID="";
 
@@ -523,6 +525,10 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        txt_detail = (TextView)findViewById(R.id.txt_detail);
+        imgbtn_detail = (ImageView) findViewById(R.id.imgbtn_detail);
+        editText = (EditText)findViewById(R.id.editText);
+
         if (savedInstanceState == null) {
 
             MainFragment mainFragment = new MainFragment();
@@ -531,9 +537,56 @@ public class DetailActivity extends AppCompatActivity {
                     .commit();
         }
 
-        txt_detail = (TextView)findViewById(R.id.txt_detail);
-        imgbtn_detail = (ImageView) findViewById(R.id.imgbtn_detail);
-        editText = (EditText)findViewById(R.id.editText);
+        // 상단바 , 검색 창  버튼 이벤트 시작
+        btn_map = (Button)findViewById(R.id.btn_map);
+        btn_home = (Button)findViewById(R.id.btn_home);
+        btn_back = (Button)findViewById(R.id.btn_back);
+        btnsearch = (Button)findViewById(R.id.btnsearch);
+
+
+
+
+        btn_map.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(DetailActivity.this,MapMainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_home.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(DetailActivity.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btn_back.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(DetailActivity.this,MapMainActivity.class);
+                startActivity(intent);
+            }
+        });
+        btnsearch.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                // 커스텀 리스트 뷰 창으로 이동
+                Intent intent = new Intent(DetailActivity.this,ListViewActivity.class);
+                intent.putExtra("searchKeyword",editText.getText().toString());
+                startActivity(intent);
+            }
+        });
+
+
+
+
+        // 상단바 , 검색 창 버튼 이벤트 끝
+
+
+
 
         Intent intent = new Intent(this.getIntent());
         ContentID = intent.getStringExtra("id");
