@@ -42,6 +42,8 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
 
     ListView listview;
     ListViewAdapter adapter;
+
+
     private boolean mLockListView;
     private LayoutInflater mInflater;
     String pageNo = "1";
