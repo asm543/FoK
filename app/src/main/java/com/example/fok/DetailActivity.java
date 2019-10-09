@@ -22,7 +22,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Random;
 
-public class DetailActivity extends AppCompatActivity {
+public class DetailActivity extends FontActivity {
 
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
     TextView txt_detail;

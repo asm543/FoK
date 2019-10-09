@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapChungcheongnamdoActivity extends AppCompatActivity {
+public class MapChungcheongnamdoActivity extends FontActivity {
 
     //심훈상록문화제 1692948
     //천안흥타령춤축제 506935

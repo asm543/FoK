@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapSeoulGyeonggidoActivity extends AppCompatActivity {
+public class MapSeoulGyeonggidoActivity extends FontActivity {
 
 
     //월미도 2495836

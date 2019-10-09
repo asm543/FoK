@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapChungcheongbugdoActivity extends AppCompatActivity {
+public class MapChungcheongbugdoActivity extends FontActivity {
 
     Button btn_cb1,btn_cb2,btn_cb3,btn_cb4,btn_cb5,btn_cb6,btn_cb7,btn_cb8;
 

@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapGyeongsangbugdoActivity extends AppCompatActivity {
+public class MapGyeongsangbugdoActivity extends FontActivity {
 
     //울진 619676
     //문경오미자축제 621109

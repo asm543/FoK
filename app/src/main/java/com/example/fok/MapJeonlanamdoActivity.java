@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapJeonlanamdoActivity extends AppCompatActivity {
+public class MapJeonlanamdoActivity extends FontActivity {
 
 
     //불갑산상화축제  1078905

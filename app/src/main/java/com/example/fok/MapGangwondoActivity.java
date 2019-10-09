@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapGangwondoActivity extends AppCompatActivity {
+public class MapGangwondoActivity extends FontActivity {
 
     //이디오피아길 2504008
     //설악문화제1718491

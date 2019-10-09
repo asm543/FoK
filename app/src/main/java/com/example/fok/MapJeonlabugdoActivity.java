@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapJeonlabugdoActivity extends AppCompatActivity {
+public class MapJeonlabugdoActivity extends FontActivity {
 
 
 //국제무형유산영살축제 2489499

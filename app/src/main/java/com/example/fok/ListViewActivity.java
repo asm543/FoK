@@ -30,7 +30,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Random;
 
-public class ListViewActivity extends AppCompatActivity implements AbsListView.OnScrollListener {
+public class ListViewActivity extends FontActivity implements AbsListView.OnScrollListener {
 
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
     public String searchKeyword;
@@ -61,7 +61,6 @@ public class ListViewActivity extends AppCompatActivity implements AbsListView.O
 
 
         adapter = new ListViewAdapter();
-
         listview = (ListView) findViewById(R.id.listview1);
         View footer = getLayoutInflater().inflate(R.layout.activity_list_footer,null,false);
         listview.addFooterView(footer);

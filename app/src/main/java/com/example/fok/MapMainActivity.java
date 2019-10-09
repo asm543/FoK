@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapMainActivity extends AppCompatActivity {
+public class MapMainActivity extends FontActivity {
 
     Button map_main_gg, map_main_gw,map_main_cb,map_main_cn,map_main_jn,map_main_jb,map_main_gb,map_main_gn,map_main_jj;
 

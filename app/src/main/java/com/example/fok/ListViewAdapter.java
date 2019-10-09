@@ -21,8 +21,6 @@ public class ListViewAdapter extends BaseAdapter {
 
     }
 
-    // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
-    @Override
     public int getCount() {
         return listViewItemList.size() ;
     }
@@ -79,3 +77,4 @@ public class ListViewAdapter extends BaseAdapter {
         listViewItemList.add(item);
     }
 }
+

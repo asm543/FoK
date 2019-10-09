@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapJejudoActivity extends AppCompatActivity {
+public class MapJejudoActivity extends FontActivity {
 
 
     //금악마을 2561340

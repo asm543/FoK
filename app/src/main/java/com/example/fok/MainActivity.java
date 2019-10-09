@@ -28,7 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FontActivity {
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
     SimpleDateFormat Year = new SimpleDateFormat("yyyy");
     SimpleDateFormat Month = new SimpleDateFormat("MM");

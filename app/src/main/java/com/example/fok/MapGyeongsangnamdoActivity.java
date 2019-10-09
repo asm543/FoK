@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MapGyeongsangnamdoActivity extends AppCompatActivity {
+public class MapGyeongsangnamdoActivity extends FontActivity {
 
     //거창한마당대축제 1798646
     //합천 1916715
