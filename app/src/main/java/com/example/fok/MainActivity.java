@@ -906,7 +906,7 @@ public class MainActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -972,7 +972,7 @@ public class MainActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -1039,7 +1039,7 @@ public class MainActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(300);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

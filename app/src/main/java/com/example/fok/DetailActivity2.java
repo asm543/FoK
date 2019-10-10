@@ -1,9 +1,5 @@
 package com.example.fok;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -24,11 +20,9 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.time.Year;
-import java.util.Date;
 import java.util.Random;
 
-public class DetailActivity extends FontActivity {
+public class DetailActivity2 extends FontActivity {
 
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
     TextView txt_title,txt_what,txt_start;
@@ -144,6 +138,11 @@ public class DetailActivity extends FontActivity {
                         if (incontentid) {
                             contentid = parser.getText();
                             incontentid = false;
+                        }
+
+                        if (increatedtime) {
+                            createdtime = parser.getText();
+                            increatedtime = false;
                         }
 
                         if (ineventstartdate) {
@@ -684,7 +683,7 @@ public class DetailActivity extends FontActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
+        setContentView(R.layout.activity_detail2);
 
         txt_title = (TextView)findViewById(R.id.txt_title);
         txt_what = (TextView)findViewById(R.id.txt_what);
@@ -714,6 +713,7 @@ public class DetailActivity extends FontActivity {
 
         Intent intent = new Intent(this.getIntent());
         ContentID = intent.getStringExtra("id");
+
         System.out.println(ContentID);
 
         Thread DetailThread = new Thread() {
@@ -840,7 +840,7 @@ public class DetailActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(DetailActivity.this,MapMainActivity.class);
+                Intent intent = new Intent(DetailActivity2.this,MapMainActivity.class);
                 startActivity(intent);
             }
         });
@@ -848,7 +848,7 @@ public class DetailActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(DetailActivity.this,MainActivity.class);
+                Intent intent = new Intent(DetailActivity2.this,MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -856,7 +856,7 @@ public class DetailActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(DetailActivity.this,MapMainActivity.class);
+                Intent intent = new Intent(DetailActivity2.this,MapMainActivity.class);
                 startActivity(intent);
             }
         });
@@ -864,7 +864,7 @@ public class DetailActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(DetailActivity.this,ListViewActivity.class);
+                Intent intent = new Intent(DetailActivity2.this,ListViewActivity.class);
                 intent.putExtra("searchKeyword",editText.getText().toString());
                 startActivity(intent);
             }
@@ -872,7 +872,7 @@ public class DetailActivity extends FontActivity {
         imgbtn_detail_hot1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(DetailActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(DetailActivity2.this, DetailActivity.class);
                 Intent.putExtra("id",detailthumbnail1[5]);
                 startActivity(Intent);
             }
@@ -880,7 +880,7 @@ public class DetailActivity extends FontActivity {
         imgbtn_detail_hot2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(DetailActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(DetailActivity2.this, DetailActivity.class);
                 Intent.putExtra("id",detailthumbnail2[5]);
                 startActivity(Intent);
             }
@@ -888,7 +888,7 @@ public class DetailActivity extends FontActivity {
         imgbtn_detail_hot3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(DetailActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(DetailActivity2.this, DetailActivity.class);
                 Intent.putExtra("id",detailthumbnail3[5]);
                 startActivity(Intent);
             }

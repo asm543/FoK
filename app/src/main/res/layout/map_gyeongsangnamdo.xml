@@ -96,7 +96,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/bar11"
                         android:textColor="#FFFFFF"
-                        android:textSize="25dp"
+                        android:textSize="20dp"
                         android:text=" 지도로 찾기" />
 
                     <LinearLayout
@@ -239,7 +239,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/bar11"
                         android:textColor="#FFFFFF"
-                        android:textSize="25dp"
+                        android:textSize="20dp"
                         android:text=" 추천 축제" />
 
                     <HorizontalScrollView
@@ -398,7 +398,7 @@
                         android:layout_height="40dp"
                         android:background="@drawable/bar11"
                         android:textColor="#FFFFFF"
-                        android:textSize="25dp"
+                        android:textSize="20dp"
                         android:text=" 추천 여행지" />
 
                     <HorizontalScrollView
