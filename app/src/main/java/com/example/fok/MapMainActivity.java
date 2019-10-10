@@ -77,13 +77,23 @@ public class MapMainActivity extends FontActivity {
         map_main_jj = (Button)findViewById(R.id.map_main_jj);
 
 
+
+        map_main_gg.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                map_main_gg.setSelected(true);
+            }
+        });
+
         map_main_gg.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(MapMainActivity.this,MapSeoulGyeonggidoActivity.class);
                 startActivity(intent);
             }
         });
+
+
         map_main_gw.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {

@@ -8,6 +8,7 @@ public class ListViewItem {
     private String descStr ;
     private String contentidStr;
 
+
     public void setIcon(Bitmap icon) {
         iconDrawable = icon ;
     }
