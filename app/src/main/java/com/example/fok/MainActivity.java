@@ -921,7 +921,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_hot1.setImageBitmap(hotBitmap1);
                 txt_hot_title1.setText(hotthumbnail1[1]);
                 txt_hot_where1.setText(hotthumbnail1[2]);
-                txt_hot_date1.setText(hotthumbnail1[3] + " ~ " + hotthumbnail1[4]);
+                txt_hot_date1.setText(hotthumbnail1[3].substring(0,4) + "년" + hotthumbnail1[3].substring(4,6) + "월" + hotthumbnail1[3].substring(6) + "일 부터 " +hotthumbnail1[4].substring(0,4) + "년" + hotthumbnail1[4].substring(4,6) + "월" + hotthumbnail1[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_hot1.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -931,7 +931,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_hot2.setImageBitmap(hotBitmap2);
                 txt_hot_title2.setText(hotthumbnail2[1]);
                 txt_hot_where2.setText(hotthumbnail2[2]);
-                txt_hot_date2.setText(hotthumbnail2[3] + " ~ " + hotthumbnail2[4]);
+                txt_hot_date2.setText(hotthumbnail2[3].substring(0,4) + "년" + hotthumbnail2[3].substring(4,6) + "월" + hotthumbnail2[3].substring(6) + "일 부터 " +hotthumbnail2[4].substring(0,4) + "년" + hotthumbnail2[4].substring(4,6) + "월" + hotthumbnail2[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_hot2.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -940,7 +940,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_hot3.setImageBitmap(hotBitmap3);
                 txt_hot_title3.setText(hotthumbnail3[1]);
                 txt_hot_where3.setText(hotthumbnail3[2]);
-                txt_hot_date3.setText(hotthumbnail3[3] + " ~ " + hotthumbnail3[4]);
+                txt_hot_date3.setText(hotthumbnail3[3].substring(0,4) + "년" + hotthumbnail3[3].substring(4,6) + "월" + hotthumbnail3[3].substring(6) + "일 부터 " +hotthumbnail3[4].substring(0,4) + "년" + hotthumbnail3[4].substring(4,6) + "월" + hotthumbnail3[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_hot3.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -987,7 +987,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_local1.setImageBitmap(localBitmap1);
                 txt_local_title1.setText(localthumbnail1[1]);
                 txt_local_where1.setText(localthumbnail1[2]);
-                txt_local_date1.setText(localthumbnail1[3] + " ~ " + localthumbnail1[4]);
+                txt_local_date1.setText(localthumbnail1[3].substring(0,4) + "년" + localthumbnail1[3].substring(4,6) + "월" + localthumbnail1[3].substring(6) + "일 부터 " +localthumbnail1[4].substring(0,4) + "년" + localthumbnail1[4].substring(4,6) + "월" + localthumbnail1[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_local1.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -997,7 +997,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_local2.setImageBitmap(localBitmap2);
                 txt_local_title2.setText(localthumbnail2[1]);
                 txt_local_where2.setText(localthumbnail2[2]);
-                txt_local_date2.setText(localthumbnail2[3] + " ~ " + localthumbnail2[4]);
+                txt_local_date2.setText(localthumbnail2[3].substring(0,4) + "년" + localthumbnail2[3].substring(4,6) + "월" + localthumbnail2[3].substring(6) + "일 부터 " +localthumbnail2[4].substring(0,4) + "년" + localthumbnail2[4].substring(4,6) + "월" + localthumbnail2[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_local2.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -1006,7 +1006,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_local3.setImageBitmap(localBitmap3);
                 txt_local_title3.setText(localthumbnail3[1]);
                 txt_local_where3.setText(localthumbnail3[2]);
-                txt_local_date3.setText(localthumbnail3[3] + " ~ " + localthumbnail3[4]);
+                txt_local_date3.setText(localthumbnail3[3].substring(0,4) + "년" + localthumbnail3[3].substring(4,6) + "월" + localthumbnail3[3].substring(6) + "일 부터 " +localthumbnail3[4].substring(0,4) + "년" + localthumbnail3[4].substring(4,6) + "월" + localthumbnail3[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_local3.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -1054,7 +1054,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_wheather1.setImageBitmap(bitmap1);
                 txt_wheather_title1.setText(seasonthumbnail1[1]);
                 txt_wheather_where1.setText(seasonthumbnail1[2]);
-                txt_wheather_date1.setText(seasonthumbnail1[3] + " ~ " + seasonthumbnail1[4]);
+                txt_wheather_date1.setText(seasonthumbnail1[3].substring(0,4) + "년" + seasonthumbnail1[3].substring(4,6) + "월" + seasonthumbnail1[3].substring(6) + "일 부터 " +seasonthumbnail1[4].substring(0,4) + "년" + seasonthumbnail1[4].substring(4,6) + "월" + seasonthumbnail1[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_wheather1.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -1064,7 +1064,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_wheather2.setImageBitmap(bitmap2);
                 txt_wheather_title2.setText(seasonthumbnail2[1]);
                 txt_wheather_where2.setText(seasonthumbnail2[2]);
-                txt_wheather_date2.setText(seasonthumbnail2[3] + " ~ " + seasonthumbnail2[4]);
+                txt_wheather_date2.setText(seasonthumbnail2[3].substring(0,4) + "년" + seasonthumbnail2[3].substring(4,6) + "월" + seasonthumbnail2[3].substring(6) + "일 부터 " +seasonthumbnail2[4].substring(0,4) + "년" + seasonthumbnail2[4].substring(4,6) + "월" + seasonthumbnail2[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_wheather2.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -1073,7 +1073,7 @@ public class MainActivity extends FontActivity {
                 imgbtn_main_wheather3.setImageBitmap(bitmap3);
                 txt_wheather_title3.setText(seasonthumbnail3[1]);
                 txt_wheather_where3.setText(seasonthumbnail3[2]);
-                txt_wheather_date3.setText(seasonthumbnail3[3] + " ~ " + seasonthumbnail3[4]);
+                txt_wheather_date3.setText(seasonthumbnail3[3].substring(0,4) + "년" + seasonthumbnail3[3].substring(4,6) + "월" + seasonthumbnail3[3].substring(6) + "일 부터 " +seasonthumbnail3[4].substring(0,4) + "년" + seasonthumbnail3[4].substring(4,6) + "월" + seasonthumbnail3[4].substring(6) + "일 까지");
             } else {
                 imgbtn_main_wheather3.setImageResource(R.drawable.ic_launcher_foreground);
             }

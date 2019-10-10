@@ -740,9 +740,29 @@ public class DetailActivity extends FontActivity {
             DetailThread.join();
 
             if (DetailBitmap != null) {
+                if(addr1 == null){
+                    addr1 = "정보가 없습니다.";
+                }
+                if(sponsor1 == null){
+                    sponsor1 = "정보가 없습니다.";
+                }
+                if(sponsor2 == null){
+                    sponsor2 = "정보가 없습니다.";
+                }
+                if(info[0] == ""){
+                    info[0] = "등록된 상세 정보가 없습니다.";
+                }
+
+                info[0] = info[0].replace("<br />","\n");
+                info[1] = info[1].replace("<br />","\n");
+                info[0] = info[0].replace("<br>","\n");
+                info[1] = info[1].replace("<br>","\n");
+
                 imgbtn_detail.setImageBitmap(DetailBitmap);
                 txt_title.setText(title);
                 txt_what.setText("\b"+info[0] + "\n" + "\b"+info[1]);
+                txt_start.setText("행사 기간 : " + eventstartdate.substring(0,4) + "년" + eventstartdate.substring(4,6) + "월" + eventstartdate.substring(6) + "일 부터\n" +eventenddate.substring(0,4) + "년" + eventenddate.substring(4,6) + "월" + eventenddate.substring(6) + "일 까지 \n" +
+                        "행사 위치 : " + addr1 + "\n주최 : " + sponsor1 + "\n주관 : " + sponsor2);
             } else {
                 imgbtn_detail.setImageResource(R.drawable.ic_launcher_foreground);
                 txt_title.setText(title);
@@ -807,7 +827,7 @@ public class DetailActivity extends FontActivity {
                 imgbtn_detail_hot1.setImageBitmap(detailBitmap1);
                 txt_detail_title1.setText(detailthumbnail1[1]);
                 txt_detail_where1.setText(detailthumbnail1[2]);
-                txt_detail_date1.setText(detailthumbnail1[3] + " ~ " + detailthumbnail1[4]);
+                txt_detail_date1.setText(detailthumbnail1[3].substring(0,4) + "년" + detailthumbnail1[3].substring(4,6) + "월" + detailthumbnail1[3].substring(6) + "일 부터 " +detailthumbnail1[4].substring(0,4) + "년" + detailthumbnail1[4].substring(4,6) + "월" + detailthumbnail1[4].substring(6) + "일 까지");
             } else {
                 imgbtn_detail_hot1.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -817,7 +837,7 @@ public class DetailActivity extends FontActivity {
                 imgbtn_detail_hot2.setImageBitmap(detailBitmap2);
                 txt_detail_title2.setText(detailthumbnail2[1]);
                 txt_detail_where2.setText(detailthumbnail2[2]);
-                txt_detail_date2.setText(detailthumbnail2[3] + " ~ " + detailthumbnail2[4]);
+                txt_detail_date2.setText(detailthumbnail2[3].substring(0,4) + "년" + detailthumbnail2[3].substring(4,6) + "월" + detailthumbnail2[3].substring(6) + "일 부터 " +detailthumbnail2[4].substring(0,4) + "년" + detailthumbnail2[4].substring(4,6) + "월" + detailthumbnail2[4].substring(6) + "일 까지");
             } else {
                 imgbtn_detail_hot2.setImageResource(R.drawable.ic_launcher_foreground);
             }
@@ -826,7 +846,7 @@ public class DetailActivity extends FontActivity {
                 imgbtn_detail_hot3.setImageBitmap(detailBitmap3);
                 txt_detail_title3.setText(detailthumbnail3[1]);
                 txt_detail_where3.setText(detailthumbnail3[2]);
-                txt_detail_date3.setText(detailthumbnail3[3] + " ~ " + detailthumbnail3[4]);
+                txt_detail_date3.setText(detailthumbnail3[3].substring(0,4) + "년" + detailthumbnail3[3].substring(4,6) + "월" + detailthumbnail3[3].substring(6) + "일 부터 " +detailthumbnail3[4].substring(0,4) + "년" + detailthumbnail3[4].substring(4,6) + "월" + detailthumbnail3[4].substring(6) + "일 까지");
             } else {
                 imgbtn_detail_hot3.setImageResource(R.drawable.ic_launcher_foreground);
             }
