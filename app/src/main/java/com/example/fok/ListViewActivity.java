@@ -36,8 +36,12 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
     public String searchKeyword;
 
-    String firstimage=null,title=null,eventenddate=null,eventstartdate=null,contentid=null;
-    boolean infirstimage=false,intitle=false,ineventenddate=false,ineventstartdate=false,incontentid=false;
+    String firstimage=null,title=null,addr1 =null,contentid=null,totalCnt = null;
+    boolean infirstimage=false,intitle=false,inaddr1 = false,incontentid=false,intotalCnt =false;
+
+    int pageCount=0;
+
+
 
     String arrange = "Q";
 
@@ -73,7 +77,39 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
         listview.setAdapter(adapter);
 
 
-        addItems();
+        mLockListView = true;
+
+
+        Thread hotThread = new Thread() {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                Parse_Data_Count();
+                if(Integer.parseInt(totalCnt)%10!=0){
+                    pageCount = Integer.parseInt(totalCnt)/10+1;
+                }
+                else if(Integer.parseInt(totalCnt)==0){
+                    pageCount = 0;
+                }
+                else pageCount = (Integer.parseInt(totalCnt)/10);
+                Parse_Data();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
+
+            }
+        };
+        hotThread.start();
+
+        try {
+            hotThread.join();
+
+            adapter.notifyDataSetChanged();
+            mLockListView = false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        // 속도의 딜레이를 구현하기 위한 꼼수
+        Handler handler = new Handler();
+        handler.postDelayed(hotThread, 1000);
 
         // 상단바
         btn_home = (Button)findViewById(R.id.btn_home);
@@ -175,12 +211,10 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
                         if (parser.getName().equals("contentid")) { // 주소
                             incontentid = true;
                         }
-                        if (parser.getName().equals("eventstartdate")) { // 주소
-                            ineventstartdate = true;
+                        if (parser.getName().equals("addr1")) { // 주소
+                            inaddr1 = true;
                         }
-                        if (parser.getName().equals("eventenddate")) { // 주소
-                            ineventenddate = true;
-                        }
+
                         if (parser.getName().equals("firstimage")) { // 주소
                             infirstimage = true;
                         }
@@ -198,16 +232,10 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
                             contentid = parser.getText();
                             incontentid = false;
                         }
-                        if (ineventstartdate) {
-                            eventstartdate = parser.getText();
-                            ineventstartdate = false;
+                        if (inaddr1) {
+                            addr1 = parser.getText();
+                            inaddr1 = false;
                         }
-
-                        if (ineventenddate) {
-                            eventenddate = parser.getText();
-                            ineventenddate = false;
-                        }
-
                         if (infirstimage) {
                             firstimage = parser.getText();
                             infirstimage = false;
@@ -220,7 +248,54 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
                         break;
                     case XmlPullParser.END_TAG:
                         if (parser.getName().equals("item")) {
-                            adapter.addItem(bitmapFromUrl(firstimage), title,eventstartdate + "~" + eventenddate,contentid ) ;
+                            adapter.addItem(bitmapFromUrl(firstimage), title,addr1,contentid ) ;
+                        }
+                        break;
+                }
+                parserEvent = parser.next();
+            }
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
+
+//        return result;
+    }
+    private void Parse_Data_Count() {
+
+        try {
+            URL url = new URL("http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchKeyword?ServiceKey="+MYKEY +"&&listYN=N&contentTypeId=15&arrange="+ arrange +"&keyword="+searchKeyword+"&numOfRows=10&pageNo="+pageNo+"&MobileOS=ETC&MobileApp=FOK"
+            );
+            XmlPullParserFactory parserCreator = XmlPullParserFactory.newInstance();
+            XmlPullParser parser = parserCreator.newPullParser();
+
+            parser.setInput(new InputStreamReader(url.openStream(), "UTF-8"));
+
+            int parserEvent = parser.getEventType();
+            System.out.println("파싱시작합니다.");
+
+            while (parserEvent != XmlPullParser.END_DOCUMENT) {
+                switch (parserEvent) {
+                    case XmlPullParser.START_TAG://parser가 시작 태그를 만나면 실행
+                        if (parser.getName().equals("totalCnt")) { // 주소
+                            intotalCnt= true;
+                        }
+                        if (parser.getName().equals("message")) {
+                        }
+                        break;
+
+                    case XmlPullParser.TEXT://parser가 내용에 접근했을때
+                        if (intotalCnt) {
+                            totalCnt = parser.getText();
+                            intotalCnt = false;
+                        }
+
+                        break;
+                    case XmlPullParser.END_TAG:
+                        if (parser.getName().equals("item")) {
+
                         }
                         break;
                 }
@@ -268,40 +343,48 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
         // 전체의 숫자와 동일해지면 가장 아래로 스크롤 되었다고 가정합니다.
         int count = totalItemCount - visibleItemCount+1;
 
-        if(firstVisibleItem+1 >= count && totalItemCount != 0
+        if(firstVisibleItem+1 >= count && totalItemCount != 0 && pageCount != 0
                 && mLockListView == false)
         {
-            pageNo = String.valueOf((Integer.parseInt(pageNo) + 1));
-            addItems();
-        }
-    }
-    private void addItems()
-    {
-        // 아이템을 추가하는 동안 중복 요청을 방지하기 위해 락을 걸어둡니다.
-        mLockListView = true;
+            if(Integer.parseInt(pageNo) <= pageCount){
+                pageNo = String.valueOf((Integer.parseInt(pageNo) + 1));
+                mLockListView = true;
 
-        Thread hotThread = new Thread() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                Parse_Data();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
 
+                Thread hotThread = new Thread() {
+                    @Override
+                    public void run() {
+                        // TODO Auto-generated method stub
+                        Parse_Data_Count();
+                        if(Integer.parseInt(totalCnt)%10!=0){
+                            pageCount = Integer.parseInt(totalCnt)/10+1;
+                        }
+                        else if(Integer.parseInt(totalCnt)==0){
+                            pageCount = 0;
+                        }
+                        else pageCount = (Integer.parseInt(totalCnt)/10);
+                        Parse_Data();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
+
+                    }
+                };
+                hotThread.start();
+
+                try {
+                    hotThread.join();
+
+                    adapter.notifyDataSetChanged();
+                    mLockListView = false;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                // 속도의 딜레이를 구현하기 위한 꼼수
+                Handler handler = new Handler();
+                handler.postDelayed(hotThread, 3000);
             }
-        };
-        hotThread.start();
 
-        try {
-            hotThread.join();
-
-            adapter.notifyDataSetChanged();
-            mLockListView = false;
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
-
-        // 속도의 딜레이를 구현하기 위한 꼼수
-        Handler handler = new Handler();
-        handler.postDelayed(hotThread, 3000);
     }
+
 
 }
