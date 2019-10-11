@@ -128,34 +128,18 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
         btn_back.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-<<<<<<< HEAD
                 // 커스텀 리스트 뷰 창으로 이동
                 finish();
-=======
-              Intent intent = new Intent(ListViewActivity.this,MainActivity.class);
->>>>>>> f077391942e6488114da96e691272e5afe9a7ed9
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-<<<<<<< HEAD
                     Intent intent = new Intent(ListViewActivity.this, ListViewActivity.class);
                     intent.putExtra("searchKeyword", editText.getText().toString());
                     startActivity(intent);
                     finish();
-
-=======
                 // 커스텀 리스트 뷰 창으로 이동
-                if(editText.getText().toString() == "") {
-                   finish();
-                }
-               else{
-                    Intent intent = new Intent(ListViewActivity.this, ListViewActivity.class);
-                    intent.putExtra("searchKeyword", editText.getText().toString());
-                    startActivity(intent);
-                } //수정해야함
->>>>>>> f077391942e6488114da96e691272e5afe9a7ed9
             }
         });
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
