@@ -22,7 +22,7 @@
             android:layout_weight="0"
             android:layout_gravity="center"
             android:layout_marginLeft="15dp"
-            android:background="@drawable/btnmap" />
+            android:background="@drawable/btnmaps" />
 
         <Button
             android:id="@+id/btn_home"
@@ -31,7 +31,7 @@
             android:layout_weight="0"
             android:layout_marginLeft="110dp"
             android:layout_gravity="center"
-            android:background="@drawable/mark"
+            android:background="@drawable/btnmark"
             />
 
         <Button
@@ -41,7 +41,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="95dp"
             android:layout_weight="0"
-            android:background="@drawable/btnback" />
+            android:background="@drawable/newback" />
 
     </LinearLayout>
 
@@ -75,7 +75,7 @@
                 android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:layout_weight="0"
-                android:background="@drawable/btnsearch" />
+                android:background="@drawable/newsearch" />
         </LinearLayout>
 
         <ScrollView

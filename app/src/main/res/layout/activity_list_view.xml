@@ -26,7 +26,7 @@
             android:layout_weight="0"
             android:layout_marginLeft="175dp"
             android:layout_gravity="center"
-            android:background="@drawable/mark"
+            android:background="@drawable/btnmark"
             />
 
         <Button
@@ -36,7 +36,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="90dp"
             android:layout_weight="0"
-            android:background="@drawable/btnback" />
+            android:background="@drawable/newback" />
 
     </LinearLayout>
     <LinearLayout
@@ -64,7 +64,7 @@
             android:layout_height="40dp"
             android:layout_margin="10dp"
             android:layout_weight="0"
-            android:background="@drawable/btnsearch2" />
+            android:background="@drawable/newsearch2" />
     </LinearLayout>
 
     <ListView

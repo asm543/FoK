@@ -31,7 +31,7 @@
                 android:layout_weight="0"
                 android:layout_gravity="center"
                 android:layout_marginLeft="165dp"
-                app:srcCompat="@drawable/mainmark" />
+                app:srcCompat="@drawable/nmainmark" />
 
             <Button
                 android:id="@+id/btn_map"
@@ -40,7 +40,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="80dp"
                 android:layout_weight="0"
-                android:background="@drawable/btnmap" />
+                android:background="@drawable/btnmaps" />
 
         </LinearLayout>
 
@@ -73,7 +73,7 @@
                     android:layout_height="40dp"
                     android:layout_margin="10dp"
                     android:layout_weight="0"
-                    android:background="@drawable/btnsearch" />
+                    android:background="@drawable/newsearch" />
             </LinearLayout>
 
             <LinearLayout

@@ -27,7 +27,7 @@
                 android:layout_weight="0"
                 android:layout_gravity="center"
                 android:layout_marginLeft="15dp"
-                android:background="@drawable/btnmap" />
+                android:background="@drawable/btnmaps" />
 
             <Button
                 android:id="@+id/btn_home"
@@ -36,7 +36,7 @@
                 android:layout_weight="0"
                 android:layout_marginLeft="110dp"
                 android:layout_gravity="center"
-                android:background="@drawable/mark3"
+                android:background="@drawable/btnmark3"
                 />
 
             <Button
@@ -46,7 +46,7 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="90dp"
                 android:layout_weight="0"
-                android:background="@drawable/btnback" />
+                android:background="@drawable/newback" />
         </LinearLayout>
 
         <ScrollView
@@ -87,7 +87,7 @@
                             android:layout_height="40dp"
                             android:layout_margin="10dp"
                             android:layout_weight="0"
-                            android:background="@drawable/btnsearch" />
+                            android:background="@drawable/newsearch" />
                     </LinearLayout>
 
 
@@ -140,7 +140,7 @@
                                             android:layout_marginLeft="120dp"
                                             android:layout_marginTop="25dp"
                                             android:layout_weight="0"
-                                            android:background="@drawable/btnbum" />
+                                            android:background="@drawable/newbum" />
 
                                     </LinearLayout>
 
@@ -156,7 +156,7 @@
                                             android:layout_marginLeft="95dp"
                                             android:layout_marginTop="10dp"
                                             android:layout_weight="0"
-                                            android:background="@drawable/btnpunglyu" />
+                                            android:background="@drawable/newpunglyu" />
 
                                         <Button
                                             android:id="@+id/btn_jn3"
@@ -165,7 +165,7 @@
                                             android:layout_marginLeft="88dp"
 
                                             android:layout_weight="0"
-                                            android:background="@drawable/btnfoodfest" />
+                                            android:background="@drawable/newfoodfest" />
                                     </LinearLayout>
 
                                     <LinearLayout
@@ -180,7 +180,7 @@
                                             android:layout_marginLeft="70dp"
                                             android:layout_marginTop="65dp"
                                             android:layout_weight="0"
-                                            android:background="@drawable/btnmasterpiece" />
+                                            android:background="@drawable/newmasterpiece" />
 
                                         <Button
                                             android:id="@+id/btn_jn5"
@@ -189,7 +189,7 @@
                                             android:layout_weight="0"
                                             android:layout_marginTop="25dp"
                                             android:layout_marginLeft="100dp"
-                                            android:background="@drawable/btnbo" />
+                                            android:background="@drawable/newbo" />
 
                                         <Button
                                             android:id="@+id/btn_jn6"
@@ -198,7 +198,7 @@
                                             android:layout_weight="0"
                                             android:layout_marginLeft="60dp"
                                             android:layout_marginBottom="10dp"
-                                            android:background="@drawable/btnfire" />
+                                            android:background="@drawable/newfire" />
 
                                     </LinearLayout>
                                 </LinearLayout>
