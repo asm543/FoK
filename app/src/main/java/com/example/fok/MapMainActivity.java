@@ -42,8 +42,7 @@ public class MapMainActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(MapMainActivity.this,MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){
