@@ -685,9 +685,6 @@ public class MapChungcheongbugdoActivity extends FontActivity {
         });
 
 
-
-
-<<<<<<< HEAD
         imgbtn_festival_hot1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -737,10 +734,5 @@ public class MapChungcheongbugdoActivity extends FontActivity {
             }
         });
 
-
-
-
-=======
->>>>>>> 32dff2f3c435797fa078630744e0c809a1b9dcf7
     }
 }
