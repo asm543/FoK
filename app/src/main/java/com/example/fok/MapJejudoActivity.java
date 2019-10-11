@@ -511,7 +511,7 @@ public class MapJejudoActivity extends FontActivity {
         imgbtn_festival_hot1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MapJejudoActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(MapJejudoActivity.this, DetailtourActivity.class);
                 Intent.putExtra("id",festivalthumbnail1[5]);
                 startActivity(Intent);
             }
@@ -519,7 +519,7 @@ public class MapJejudoActivity extends FontActivity {
         imgbtn_festival_hot2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MapJejudoActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(MapJejudoActivity.this, DetailtourActivity.class);
                 Intent.putExtra("id",festivalthumbnail2[5]);
                 startActivity(Intent);
             }
@@ -527,7 +527,7 @@ public class MapJejudoActivity extends FontActivity {
         imgbtn_festival_hot3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MapJejudoActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(MapJejudoActivity.this, DetailtourActivity.class);
                 Intent.putExtra("id",festivalthumbnail3[5]);
                 startActivity(Intent);
             }
@@ -535,7 +535,7 @@ public class MapJejudoActivity extends FontActivity {
         imgbtn_tour_hot1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MapJejudoActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(MapJejudoActivity.this, DetailtourActivity.class);
                 Intent.putExtra("id",tourthumbnail1[5]);
                 startActivity(Intent);
             }
@@ -543,7 +543,7 @@ public class MapJejudoActivity extends FontActivity {
         imgbtn_tour_hot2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MapJejudoActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(MapJejudoActivity.this, DetailtourActivity.class);
                 Intent.putExtra("id",tourthumbnail2[5]);
                 startActivity(Intent);
             }
@@ -551,7 +551,7 @@ public class MapJejudoActivity extends FontActivity {
         imgbtn_tour_hot3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MapJejudoActivity.this, DetailActivity2.class);
+                Intent Intent = new Intent(MapJejudoActivity.this, DetailtourActivity.class);
                 Intent.putExtra("id",tourthumbnail3[5]);
                 startActivity(Intent);
             }
@@ -580,8 +580,7 @@ public class MapJejudoActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(MapJejudoActivity.this,MapMainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){

@@ -63,7 +63,7 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
         setContentView(R.layout.activity_list_view);
 
         editText = (EditText)findViewById(R.id.editText);
-        Intent intent = new Intent(this.getIntent());
+        final Intent intent = new Intent(this.getIntent());
         searchKeyword = intent.getStringExtra("searchKeyword");
         editText.setText(searchKeyword);
 
@@ -127,19 +127,21 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
         btn_back.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(ListViewActivity.this,MapMainActivity.class);
-                startActivity(intent);
-                finish();
+              Intent intent = new Intent(ListViewActivity.this,MainActivity.class);
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(ListViewActivity.this,ListViewActivity.class);
-                intent.putExtra("searchKeyword",editText.getText().toString());
-                startActivity(intent);
+                if(editText.getText().toString() == "") {
+                   finish();
+                }
+               else{
+                    Intent intent = new Intent(ListViewActivity.this, ListViewActivity.class);
+                    intent.putExtra("searchKeyword", editText.getText().toString());
+                    startActivity(intent);
+                } //수정해야함
             }
         });
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
