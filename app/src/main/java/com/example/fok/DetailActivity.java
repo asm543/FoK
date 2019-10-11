@@ -900,7 +900,7 @@ public class DetailActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(DetailActivity.this,MapMainActivity.class);
+                Intent intent = new Intent(DetailActivity.this,MapMainActivity.class);  //수정해야함
                 startActivity(intent);
             }
         });
