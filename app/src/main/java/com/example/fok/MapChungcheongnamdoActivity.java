@@ -585,8 +585,7 @@ public class MapChungcheongnamdoActivity extends FontActivity {
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(MapChungcheongnamdoActivity.this,MapMainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){

@@ -755,7 +755,7 @@ public class DetailtourActivity extends FontActivity {
 
                 imgbtn_detail.setImageBitmap(DetailBitmap);
                 txt_title.setText(title);
-//                txt_what.setText("\b"+ overview + "\n\n" + "\b"+info[0] + "\n\n" + "\b"+info[1]);
+                txt_what.setText("\b"+ overview + "\n\n");
 //                txt_start.setText("행사 기간 : " + eventstartdate.substring(0,4) + "년" + eventstartdate.substring(4,6) + "월" + eventstartdate.substring(6) + "일 부터\n" +eventenddate.substring(0,4) + "년" + eventenddate.substring(4,6) + "월" + eventenddate.substring(6) + "일 까지 \n" +
 //                        "행사 위치 : " + addr1 + "\n주최 : " + sponsor1 + "\n주관 : " + sponsor2 + "\n연락처 : " +tel + "(" + telname + ")");
             } else {
@@ -774,16 +774,16 @@ public class DetailtourActivity extends FontActivity {
                 overview = overview.replace("<br>","\n");
                 overview = overview.replace("<b>","\b");
                 overview = overview.replace("</b>","\b");
-                info[0] = info[0].replace("<br />","\n");
-                info[1] = info[1].replace("<br />","\n");
-                info[0] = info[0].replace("<br>","\n");
-                info[1] = info[1].replace("<br>","\n");
+//                info[0] = info[0].replace("<br />","\n");
+//                info[1] = info[1].replace("<br />","\n");
+//                info[0] = info[0].replace("<br>","\n");
+//                info[1] = info[1].replace("<br>","\n");
 
                 imgbtn_detail.setImageBitmap(DetailBitmap);
                 txt_title.setText(title);
-                txt_what.setText("\b"+ overview + "\n\n" + "\b"+info[0] + "\n\n" + "\b"+info[1]);
-                txt_start.setText("행사 기간 : " + eventstartdate.substring(0,4) + "년" + eventstartdate.substring(4,6) + "월" + eventstartdate.substring(6) + "일 부터\n" +eventenddate.substring(0,4) + "년" + eventenddate.substring(4,6) + "월" + eventenddate.substring(6) + "일 까지 \n" +
-                        "행사 위치 : " + addr1 + "\n주최 : " + sponsor1 + "\n주관 : " + sponsor2 + "\n연락처 : " +tel + "(" + telname + ")");
+//                txt_what.setText("\b"+ overview + "\n\n" + "\b"+info[0] + "\n\n" + "\b"+info[1]);
+//                txt_start.setText("행사 기간 : " + eventstartdate.substring(0,4) + "년" + eventstartdate.substring(4,6) + "월" + eventstartdate.substring(6) + "일 부터\n" +eventenddate.substring(0,4) + "년" + eventenddate.substring(4,6) + "월" + eventenddate.substring(6) + "일 까지 \n" +
+//                        "행사 위치 : " + addr1 + "\n주최 : " + sponsor1 + "\n주관 : " + sponsor2 + "\n연락처 : " +tel + "(" + telname + ")");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

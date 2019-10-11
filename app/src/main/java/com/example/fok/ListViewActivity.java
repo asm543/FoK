@@ -19,6 +19,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -128,18 +129,17 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
             @Override
             public void onClick(View view) {
                 // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(ListViewActivity.this,MapMainActivity.class);
-                startActivity(intent);
                 finish();
             }
         });
         btnsearch.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                // 커스텀 리스트 뷰 창으로 이동
-                Intent intent = new Intent(ListViewActivity.this,ListViewActivity.class);
-                intent.putExtra("searchKeyword",editText.getText().toString());
-                startActivity(intent);
+                    Intent intent = new Intent(ListViewActivity.this, ListViewActivity.class);
+                    intent.putExtra("searchKeyword", editText.getText().toString());
+                    startActivity(intent);
+                    finish();
+
             }
         });
         editText.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -191,7 +191,6 @@ public class ListViewActivity extends FontActivity implements AbsListView.OnScro
 //        여기서 parent를 통해 getItemAtPosition() 함수를 사용하면 position에 해당하는 아이템 데이터를 가져올 수 있습니다.
 //        단, getItemAtPosition() 함수의 리턴 타입은 Object 타입이므로 소스에서 정의한 아이템 데이터 타입으로 형변환을 해줘야 합니다.
     }
-    //http://api.visitkorea.or.kr/openapi/service/rest/KorService/searchFestival?serviceKey=" + MYKEY + "&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=FoK&arrange=Q&listYN=Y
     private void Parse_Data() {
 
         try {

@@ -131,7 +131,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="170dp"
+                            android:layout_height="200dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/textbar"
                             android:orientation="vertical">
@@ -170,7 +170,7 @@
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="100dp"
+                            android:layout_height="200dp"
                             android:layout_margin="10dp"
                             android:background="@drawable/textbar"
                             android:orientation="vertical">
