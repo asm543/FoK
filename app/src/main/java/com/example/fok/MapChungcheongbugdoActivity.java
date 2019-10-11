@@ -29,7 +29,7 @@ public class MapChungcheongbugdoActivity extends FontActivity {
     Button btn_cb1,btn_cb2,btn_cb3,btn_cb4,btn_cb5,btn_cb6,btn_cb7,btn_cb8;
     Button btn_map,btn_home,btn_back,btnsearch;
     EditText editText;
-
+// 여기부터
     public static final String MYKEY = "IPbBi9DbtpkIHLLYxiEdNhiPoe%2B2ZzZWPHoag%2FeAOimpSX%2FCAZW4%2FU8CmowZTEuFFzgXP3%2FRAuH%2FZYJQ2fQgxQ%3D%3D";
 
     TextView txt_festival_title1,txt_festival_title2,txt_festival_title3,txt_festival_where1,txt_festival_where2,txt_festival_where3,txt_festival_date1,txt_festival_date2,txt_festival_date3;
@@ -318,7 +318,7 @@ public class MapChungcheongbugdoActivity extends FontActivity {
         }
         return bitmap;
     } //미리보기 이미지 불러오기 메소드
-
+//여기까지
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -351,7 +351,7 @@ public class MapChungcheongbugdoActivity extends FontActivity {
         //영동 포도축제142191
 
 
-
+//2
         txt_festival_title1 = (TextView) findViewById(R.id.txt_festival_title1);
         txt_festival_title2 = (TextView) findViewById(R.id.txt_festival_title2);
         txt_festival_title3 = (TextView) findViewById(R.id.txt_festival_title3);
@@ -513,6 +513,61 @@ public class MapChungcheongbugdoActivity extends FontActivity {
         }//메인화면 인기순 3개 축제 띄우기
 
 
+        imgbtn_festival_hot1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
+                Intent.putExtra("id",festivalthumbnail1[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_festival_hot2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
+                Intent.putExtra("id",festivalthumbnail2[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_festival_hot3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
+                Intent.putExtra("id",festivalthumbnail3[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_tour_hot1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
+                Intent.putExtra("id",tourthumbnail1[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_tour_hot2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
+                Intent.putExtra("id",tourthumbnail2[5]);
+                startActivity(Intent);
+            }
+        });
+        imgbtn_tour_hot3.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
+                Intent.putExtra("id",tourthumbnail3[5]);
+                startActivity(Intent);
+            }
+        });
+
+
+
+
+         // 요기까지
+
+
 
         btn_map.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -554,8 +609,6 @@ public class MapChungcheongbugdoActivity extends FontActivity {
                 editText.setText("");
             }
         });
-
-
 
         // 상단바 , 검색 창 버튼 이벤트 끝
         btn_cb1.setOnClickListener(new View.OnClickListener(){
@@ -628,58 +681,6 @@ public class MapChungcheongbugdoActivity extends FontActivity {
                 Intent intent = new Intent(MapChungcheongbugdoActivity.this,DetailActivity.class); // 지금 이 액티비티 이름.this 영동포도축제
                 intent.putExtra("id","142191");
                 startActivity(intent);
-            }
-        });
-
-
-
-
-        imgbtn_festival_hot1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
-                Intent.putExtra("id",festivalthumbnail1[5]);
-                startActivity(Intent);
-            }
-        });
-        imgbtn_festival_hot2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
-                Intent.putExtra("id",festivalthumbnail2[5]);
-                startActivity(Intent);
-            }
-        });
-        imgbtn_festival_hot3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
-                Intent.putExtra("id",festivalthumbnail3[5]);
-                startActivity(Intent);
-            }
-        });
-        imgbtn_tour_hot1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
-                Intent.putExtra("id",tourthumbnail1[5]);
-                startActivity(Intent);
-            }
-        });
-        imgbtn_tour_hot2.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
-                Intent.putExtra("id",tourthumbnail2[5]);
-                startActivity(Intent);
-            }
-        });
-        imgbtn_tour_hot3.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MapChungcheongbugdoActivity.this, DetailActivity2.class);
-                Intent.putExtra("id",tourthumbnail3[5]);
-                startActivity(Intent);
             }
         });
 
