@@ -727,7 +727,7 @@ public class DetailActivity2 extends FontActivity {
                 DetailBitmap = bitmapFromUrl(firstimage);
 
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -833,7 +833,7 @@ public class DetailActivity2 extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

@@ -888,7 +888,7 @@ public class MainActivity extends FontActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                int errCount = 7;
+                int errCount = 5;
                 Parse_Data_sortView();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
                 hotBitmap1 = bitmapFromUrl(hotthumbnail1[0]);
                 hotBitmap2 = bitmapFromUrl(hotthumbnail2[0]);
@@ -906,7 +906,7 @@ public class MainActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -954,7 +954,7 @@ public class MainActivity extends FontActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                int errCount = 7;
+                int errCount = 5;
                 Parse_Data_sortLocal();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
                 localBitmap1 = bitmapFromUrl(localthumbnail1[0]);
                 localBitmap2 = bitmapFromUrl(localthumbnail2[0]);
@@ -972,7 +972,7 @@ public class MainActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -1021,7 +1021,7 @@ public class MainActivity extends FontActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                int errCount = 7;
+                int errCount = 5;
                 Parse_Data_season();//아래 메소드를 호출하여 XML data를 파싱해서 String 객체로 얻어오기
                 bitmap1 = bitmapFromUrl(seasonthumbnail1[0]);
                 bitmap2 = bitmapFromUrl(seasonthumbnail2[0]);
@@ -1039,7 +1039,7 @@ public class MainActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

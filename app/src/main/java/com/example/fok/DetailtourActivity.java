@@ -42,9 +42,12 @@ public class DetailtourActivity extends FontActivity {
     String addr1 = null, addr2 = null, zipcode = null;
     public String mapx = null, mapy = null, overview = null; //주소1, 주소2, 우편번호, x좌표, y좌표, 미리보기텍스트 // 공통정보 조회 쪽
 
-    String agelimit = null, bookingplace = null, discountinfofestival = null, eventenddate = null, eventhomepage = null, eventplace = null, eventstartdate = null;
-    String festivalgrade = null, placeinfo = null, playtime = null, program = null, spendtimefestival = null, sponsor1 = null;
-    String sponsor1tel = null, sponsor2 = null, sponsor2tel = null, subevent = null, usetimefestival = null; // 소개정보 조회 쪽
+    String eventenddate = null, eventstartdate = null;
+    String sponsor1 = null;
+
+
+    String accomcount = null , chkbabycarriage = null, chkcreditcard = null, chkpet = null, expagerange = null, expguide = null, infocenter= null,opendate = null, parking = null;
+    String restdate = null,useseason = null,usetime = null;
 
     String infoname=null,infotext=null;
     String[] info = new String[3];// 반복정보 조회 쪽
@@ -62,9 +65,10 @@ public class DetailtourActivity extends FontActivity {
     boolean increatedtime = false, inhomepage = false, inmodifiedtime = false, intel = false, intelname = false, intitle= false,infirstimage = false, inDetailImage=false;
     boolean inaddr1= false, inaddr2 = false, inzipcode = false, inmapx = false, inmapy = false, inoverview = false; // 공통정보 조회 쪽
 
-    boolean inagelimit = false, inbookingplace = false, indiscountinfofestival = false, ineventenddate = false, ineventhomepage = false, ineventplace= false,ineventstartdate = false;
-    boolean infestivalgrade= false, inplaceinfo = false, inplaytime = false, inprogram = false, inspendtimefestival = false, insponsor1 = false;
-    boolean insponsor1tel = false, insponsor2 = false, insponsor2tel= false, insubevent = false, inusetimefestival = false; //소개정보 조회 쪽
+    boolean ineventenddate = false,ineventstartdate = false;
+    boolean inaccomcount = false , inchkbabycarriage = false, inchkcreditcard = false, inchkpet = false, inexpagerange = false, inexpguide = false, ininfocenter= false,inopendate = false, inparking = false;
+    boolean inrestdate = false,inuseseason = false,inusetime = false;
+    //소개정보 조회 쪽
 
     boolean ininfoname=false,ininfotext=false; // 반복정보 조회 쪽
 
@@ -368,60 +372,39 @@ public class DetailtourActivity extends FontActivity {
                 switch (parserEvent) {
                     case XmlPullParser.START_TAG://parser가 시작 태그를 만나면 실행
 
-                        if (parser.getName().equals("agelimit")) { // 주소
-                            inagelimit = true;
+                        if (parser.getName().equals("accomcount")) { // 주소
+                            inaccomcount = true;
                         }
 
-                        if (parser.getName().equals("bookingplace")) { // 주소
-                            inbookingplace = true;
+                        if (parser.getName().equals("chkbabycarriage")) { // 주소
+                            inchkbabycarriage = true;
                         }
-                        if (parser.getName().equals("discountinfofestival")) { // 주소
-                            indiscountinfofestival = true;
+                        if (parser.getName().equals("chkpet")) { // 주소
+                            inchkpet = true;
                         }
-                        if (parser.getName().equals("eventenddate")) { // 주소
-                            ineventenddate = true;
+                        if (parser.getName().equals("expagerange")) { // 주소
+                            inexpagerange = true;
                         }
-                        if (parser.getName().equals("eventstartdate")) { // 주소
-                            ineventstartdate = true;
+                        if (parser.getName().equals("expguide")) { // 주소
+                            inexpguide = true;
                         }
-                        if (parser.getName().equals("eventhomepage")) { // 주소
-                            ineventhomepage = true;
+                        if (parser.getName().equals("infocenter")) { // 주소
+                            ininfocenter = true;
                         }
-                        if (parser.getName().equals("eventplace")) { // 주소
-                            ineventplace = true;
+                        if (parser.getName().equals("opendate")) { // 주소
+                            inopendate = true;
                         }
-                        if (parser.getName().equals("festivalgrade")) { // 주소
-                            infestivalgrade = true;
+                        if (parser.getName().equals("parking")) { // 주소
+                            inparking = true;
                         }
-                        if (parser.getName().equals("placeinfo")) { // 주소
-                            inplaceinfo = true;
+                        if (parser.getName().equals("restdate")) { // 주소
+                            inrestdate = true;
                         }
-                        if (parser.getName().equals("playtime")) { // 주소
-                            inplaytime = true;
+                        if (parser.getName().equals("useseason")) { // 주소
+                            inuseseason = true;
                         }
-                        if (parser.getName().equals("program")) { // 주소
-                            inprogram = true;
-                        }
-                        if (parser.getName().equals("spendtimefestival")) { // 주소
-                            inspendtimefestival = true;
-                        }
-                        if (parser.getName().equals("sponsor1")) { // 주소
-                            insponsor1 = true;
-                        }
-                        if (parser.getName().equals("sponsor1tel")) { // 주소
-                            insponsor1tel = true;
-                        }
-                        if (parser.getName().equals("sponsor2")) { // 주소
-                            insponsor2 = true;
-                        }
-                        if (parser.getName().equals("sponsor2tel")) { // 주소
-                            insponsor2tel = true;
-                        }
-                        if (parser.getName().equals("subevent")) { // 주소
-                            insubevent = true;
-                        }
-                        if (parser.getName().equals("usetimefestival")) { // 주소
-                            inusetimefestival = true;
+                        if (parser.getName().equals("usetime")) { // 주소
+                            inusetime = true;
                         }
 
 
@@ -432,89 +415,63 @@ public class DetailtourActivity extends FontActivity {
 
                     case XmlPullParser.TEXT://parser가 내용에 접근했을때
 
-                        if (inagelimit) {
-                            agelimit = parser.getText();
-                            inagelimit = false;
+                        if (inaccomcount) {
+                            accomcount = parser.getText();
+                            inaccomcount = false;
                         }
-                        if (inbookingplace) {
-                            bookingplace = parser.getText();
-                            inbookingplace = false;
-                        }
-
-                        if (indiscountinfofestival) {
-                            discountinfofestival = parser.getText();
-                            indiscountinfofestival = false;
+                        if (inchkbabycarriage) {
+                            chkbabycarriage = parser.getText();
+                            inchkbabycarriage = false;
                         }
 
-                        if (ineventenddate) {
-                            eventenddate = parser.getText();
-                            ineventenddate = false;
+                        if (inchkcreditcard) {
+                            chkcreditcard = parser.getText();
+                            inchkcreditcard = false;
                         }
 
-                        if (ineventhomepage) {
-                            eventhomepage = parser.getText();
-                            ineventhomepage = false;
+                        if (inchkpet) {
+                            chkpet = parser.getText();
+                            inchkpet = false;
                         }
 
-                        if (ineventplace) {
-                            eventplace = parser.getText();
-                            ineventplace = false;
+                        if (inexpagerange) {
+                            expagerange = parser.getText();
+                            inexpagerange = false;
                         }
 
-                        if (ineventstartdate) {
-                            eventstartdate = parser.getText();
-                            ineventstartdate = false;
+                        if (inexpguide) {
+                            expguide = parser.getText();
+                            inexpguide = false;
                         }
 
-                        if (infestivalgrade) {
-                            festivalgrade = parser.getText();
-                            infestivalgrade = false;
+                        if (ininfocenter) {
+                            infocenter = parser.getText();
+                            ininfocenter = false;
                         }
 
-                        if (inplaceinfo) {
-                            placeinfo = parser.getText();
-                            inplaceinfo = false;
+                        if (inopendate) {
+                            opendate = parser.getText();
+                            inopendate = false;
                         }
 
-                        if (inplaytime) {
-                            playtime = parser.getText();
-                            inplaytime = false;
+                        if (inparking) {
+                            parking = parser.getText();
+                            inparking = false;
                         }
 
-                        if (inprogram) {
-                            program = parser.getText();
-                            inprogram = false;
+                        if (inrestdate) {
+                            restdate = parser.getText();
+                            inrestdate = false;
                         }
 
-                        if (inspendtimefestival) {
-                            spendtimefestival = parser.getText();
-                            inspendtimefestival = false;
+                        if (inuseseason) {
+                            useseason = parser.getText();
+                            inuseseason = false;
                         }
 
-                        if (insponsor1) {
-                            sponsor1 = parser.getText();
-                            insponsor1 = false;
-                        }
-                        if (insponsor1tel) {
-                            sponsor1tel = parser.getText();
-                            insponsor1tel = false;
-                        }
-                        if (insponsor2) {
-                            sponsor2 = parser.getText();
-                            insponsor2 = false;
-                        }
-                        if (insponsor2tel) {
-                            sponsor2tel = parser.getText();
-                            insponsor2tel = false;
-                        }
-
-                        if (insubevent) {
-                            subevent = parser.getText();
-                            insubevent = false;
-                        }
-                        if (inusetimefestival) {
-                            usetimefestival = parser.getText();
-                            inusetimefestival = false;
+                        if (inusetime) {
+                            usetime = parser.getText();
+                            inusetime = false;
                         }
 
                         break;
@@ -722,7 +679,7 @@ public class DetailtourActivity extends FontActivity {
                 DetailBitmap = bitmapFromUrl(firstimage);
 
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -730,69 +687,34 @@ public class DetailtourActivity extends FontActivity {
         };
         DetailThread.start();
 
+
         try {
             DetailThread.join();
 
+            if(overview != null || overview !="") {
+
+                overview = overview.replace("<br />", "\n");
+                overview = overview.replace("<br>", "\n");
+                overview = overview.replace("<b>", "\b");
+                overview = overview.replace("</b>", "\b");
+            }
+
             if (DetailBitmap != null) {
-                if(addr1 == null){
-                    addr1 = "정보가 없습니다.";
-                }
-                if(sponsor1 == null){
-                    sponsor1 = "정보가 없습니다.";
-                }
-                if(sponsor2 == null){
-                    sponsor2 = "정보가 없습니다.";
-                }
-
-                overview = overview.replace("<br />","\n");
-                overview = overview.replace("<br>","\n");
-                overview = overview.replace("<b>","\b");
-                overview = overview.replace("</b>","\b");
-//                info[0] = info[0].replace("<br />","\n");
-//                info[1] = info[1].replace("<br />","\n");
-//                info[0] = info[0].replace("<br>","\n");
-//                info[1] = info[1].replace("<br>","\n");
-
                 imgbtn_detail.setImageBitmap(DetailBitmap);
                 txt_title.setText(title);
-                txt_what.setText("\b"+ overview + "\n\n");
-//                txt_start.setText("행사 기간 : " + eventstartdate.substring(0,4) + "년" + eventstartdate.substring(4,6) + "월" + eventstartdate.substring(6) + "일 부터\n" +eventenddate.substring(0,4) + "년" + eventenddate.substring(4,6) + "월" + eventenddate.substring(6) + "일 까지 \n" +
-//                        "행사 위치 : " + addr1 + "\n주최 : " + sponsor1 + "\n주관 : " + sponsor2 + "\n연락처 : " +tel + "(" + telname + ")");
+                txt_what.setText("\b"+ overview + "\n\n\b" + expguide);
+                txt_start.setText("위치 : " + addr1 + "\n수용인원 : " + accomcount + "\n이용 시기 : "  + useseason+ "\n문의처 : " +infocenter + "\n 체험 가능 연령 : " + expagerange + "\n이용 시간 : " + usetime + "\n개장일 : " + opendate + "\n쉬는날 : " + restdate);
             } else {
                 imgbtn_detail.setImageResource(R.drawable.ic_launcher_foreground);
-                if(addr1 == null){
-                    addr1 = "정보가 없습니다.";
-                }
-                if(sponsor1 == null){
-                    sponsor1 = "정보가 없습니다.";
-                }
-                if(sponsor2 == null){
-                    sponsor2 = "정보가 없습니다.";
-                }
-
-                overview = overview.replace("<br />","\n");
-                overview = overview.replace("<br>","\n");
-                overview = overview.replace("<b>","\b");
-                overview = overview.replace("</b>","\b");
-//                info[0] = info[0].replace("<br />","\n");
-//                info[1] = info[1].replace("<br />","\n");
-//                info[0] = info[0].replace("<br>","\n");
-//                info[1] = info[1].replace("<br>","\n");
 
                 imgbtn_detail.setImageBitmap(DetailBitmap);
                 txt_title.setText(title);
-//                txt_what.setText("\b"+ overview + "\n\n" + "\b"+info[0] + "\n\n" + "\b"+info[1]);
 //                txt_start.setText("행사 기간 : " + eventstartdate.substring(0,4) + "년" + eventstartdate.substring(4,6) + "월" + eventstartdate.substring(6) + "일 부터\n" +eventenddate.substring(0,4) + "년" + eventenddate.substring(4,6) + "월" + eventenddate.substring(6) + "일 까지 \n" +
 //                        "행사 위치 : " + addr1 + "\n주최 : " + sponsor1 + "\n주관 : " + sponsor2 + "\n연락처 : " +tel + "(" + telname + ")");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         } // 콘텐츠 코드로 데이터 불러오기
-
-
-
-
-
 
         if (savedInstanceState == null) {
 
@@ -828,7 +750,7 @@ public class DetailtourActivity extends FontActivity {
                     }
                 }
                 try {
-                    Thread.sleep(300);
+                    Thread.sleep(100);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
